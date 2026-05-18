@@ -233,4 +233,17 @@ document.getElementById("btnReset").addEventListener("click", () => {
 });
 apply();
 </script>
+
+<div style="margin-top: 24px; padding: 20px 22px; background: #fff; border-radius: 10px; border: 1px solid #e2e4e8; font-size: 13px; line-height: 1.7;">
+  <div style="font-weight:600; color:#0a0a0a; margin-bottom:10px; font-size:14px;">Что ещё в репо</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px 22px;">
+    <a href="benchmarks/ollama/dashboard.html" style="color:#1f6feb; text-decoration:none;">→ <b>Графики и распределения</b> — tps vs B, деградация по контексту, NVLink vs PCIe</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/FULL_REPORT.md" style="color:#1f6feb; text-decoration:none;">→ <b>FULL_REPORT.md</b> — полный отчёт по 108 LLM</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/MODEL_CARDS.md" style="color:#1f6feb; text-decoration:none;">→ <b>MODEL_CARDS.md</b> — 108 карточек с конфигом и примером ответа</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/V100_CHECKLIST.md" style="color:#1f6feb; text-decoration:none;">→ <b>V100_CHECKLIST.md</b> — 17 граблей Volta cc 7.0 с решениями</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/VARIANCE_FINDINGS.md" style="color:#1f6feb; text-decoration:none;">→ <b>VARIANCE_FINDINGS.md</b> — почему N=1 валиден (CV ≤ 0.10%)</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/COSTS.md" style="color:#1f6feb; text-decoration:none;">→ <b>COSTS.md</b> — vast.ai / Lambda / RunPod — где сейчас брать V100</a>
+  </div>
+</div>
+
 </body></html>
