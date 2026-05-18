@@ -182,10 +182,10 @@ What N=1 does NOT cover: thermal throttling on long sustained loads, scheduler j
 
 ## Authors and contact
 
-This bench was built by the team behind [**BVM**](https://bvm.ai) — we do AI for sales-call analytics and on-prem LLM deployments (this V100 box runs our own production call-evaluation pipeline). The article and this repo are the engineering write-up of one weekend of running the rig at its limits.
+This bench was built by the team behind [**BVM**](https://bvmax.ru/ai) — we do AI for sales-call analytics and on-prem LLM deployments (this V100 box runs our own production call-evaluation pipeline). The article and this repo are the engineering write-up of one weekend of running the rig at its limits.
 
 - **Telegram (notes from the CTO):** [@notes_from_cto](https://t.me/notes_from_cto) — irregular technical posts on what we're building.
-- **BVM site:** [bvm.ai](https://bvm.ai)
+- **BVM site:** [bvmax.ru/ai](https://bvmax.ru/ai)
 - **Issues / PRs:** open one here — fastest way to reach us about the bench itself.
 - **Email for collaborations:** see GitHub profile.
 

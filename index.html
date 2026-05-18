@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <title>V100 Bench — 128 entries</title>
 <style>
 * { box-sizing: border-box; }
@@ -62,6 +62,10 @@ tbody tr:hover td.sticky-col { background: #f5f7fa; }
 .site-header a { color: #60a5fa; text-decoration: none; }
 .site-header a:hover { text-decoration: underline; }
 .site-header .tg b { color: #c9d1d9; font-weight: 600; }
+.lang-toggle { display: inline-flex; border: 1px solid #30363d; border-radius: 6px; overflow: hidden; font-size: 11px; }
+.lang-toggle button { background: transparent; color: #8b949e; border: 0; padding: 3px 9px; cursor: pointer; font-family: inherit; font-weight: 600; letter-spacing: 0.04em; transition: all 0.12s; }
+.lang-toggle button:hover { color: #c9d1d9; }
+.lang-toggle button.active { background: #1f6feb; color: #fff; }
 </style></head>
 <body>
 
@@ -71,14 +75,21 @@ tbody tr:hover td.sticky-col { background: #f5f7fa; }
   <span class="spacer"></span>
   <span class="tg">Telegram: <a href="https://t.me/notes_from_cto"><b>@notes_from_cto</b></a></span>
   <span>·</span>
-  <span>Сайт: <a href="https://bvmax.ru/ai">bvmax.ru/ai</a></span>
+  <span data-en="Site" data-ru="Сайт">Site</span>: <a href="https://bvmax.ru/ai">bvmax.ru/ai</a>
   <span>·</span>
-  <span>Репо: <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026">GitHub</a></span>
+  <span data-en="Repo" data-ru="Репо">Repo</span>: <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026">GitHub</a>
+  <span class="lang-toggle" role="group" aria-label="language">
+    <button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
+  </span>
 </div>
 
 <h1>V100 Bench Dashboard · 2× V100 32GB SXM2 NVLink</h1>
-<div class="sub">BVM транскрипции звонков · 4 уровня контекста · Ollama 0.24 (NUM_PARALLEL=1, FLASH_ATTENTION=1, KV_CACHE_TYPE=q8_0) · diffusion: sd.cpp + diffusers · N=1 (CV ≤ 0.10%) · <b>наведи на любой заголовок колонки чтобы увидеть что значит</b></div>
-<div class="sub" style="margin-top: -6px;">Конфиги: <code>cogvideox_v100.py</code> · <code>run_wan22_sdcpp.sh</code> · <code>ollama_bench_real.py</code> · <code>build_dashboard.py</code> · полные команды в <code>HANDOFF.md</code></div>
+<div class="sub">
+  <span data-en="BVM call transcripts · 4 context levels · Ollama 0.24 (NUM_PARALLEL=1, FLASH_ATTENTION=1, KV_CACHE_TYPE=q8_0) · diffusion: sd.cpp + diffusers · N=1 (CV ≤ 0.10%) · " data-ru="BVM транскрипции звонков · 4 уровня контекста · Ollama 0.24 (NUM_PARALLEL=1, FLASH_ATTENTION=1, KV_CACHE_TYPE=q8_0) · diffusion: sd.cpp + diffusers · N=1 (CV ≤ 0.10%) · ">BVM call transcripts · 4 context levels · Ollama 0.24 (NUM_PARALLEL=1, FLASH_ATTENTION=1, KV_CACHE_TYPE=q8_0) · diffusion: sd.cpp + diffusers · N=1 (CV ≤ 0.10%) · </span><b data-en="hover any column header to see what it means" data-ru="наведи на любой заголовок колонки чтобы увидеть что значит">hover any column header to see what it means</b>
+</div>
+<div class="sub" style="margin-top: -6px;">
+  <span data-en="Configs: " data-ru="Конфиги: ">Configs: </span><code>cogvideox_v100.py</code> · <code>run_wan22_sdcpp.sh</code> · <code>ollama_bench_real.py</code> · <code>build_dashboard.py</code><span data-en=" · full commands in " data-ru=" · полные команды в "> · full commands in </span><code>HANDOFF.md</code>
+</div>
 
 <div class="controls">
   <div class="pills" id="typePills">
@@ -86,43 +97,98 @@ tbody tr:hover td.sticky-col { background: #f5f7fa; }
     <span class="pill pill-type" data-type="image">Image (14)</span>
     <span class="pill pill-type" data-type="video">Video (6)</span>
   </div>
-  <div><label>Поиск:</label> <input id="fSearch" type="text" class="search-input" placeholder="имя модели или семьи..."></div>
-  <div><label>Семья:</label> <select id="fFam"><option value="">все (60)</option><option>Aya</option><option>CodeLlama</option><option>Codestral</option><option>CogVideoX-5b</option><option>Command-R</option><option>Command-R+</option><option>DeepSeek-Coder</option><option>DeepSeek-R1</option><option>Dolphin-3</option><option>Dolphin-Mixtral</option><option>EXAONE</option><option>FLUX</option><option>Falcon-3</option><option>GLM-4</option><option>GLM-4.7-Flash</option><option>GLM-OCR</option><option>GPT-OSS</option><option>Gemma-2</option><option>Gemma-3</option><option>Granite</option><option>Hermes</option><option>Huihui-GLM-4.6V</option><option>Llama-2</option><option>Llama-3</option><option>Llama-3.1</option><option>Llama-3.2</option><option>Llama-3.3</option><option>Magicoder</option><option>Mistral</option><option>Mistral-Large</option><option>Mistral-Nemo</option><option>Mistral-Small</option><option>Mixtral</option><option>Moondream</option><option>Nemotron</option><option>Nemotron-Mini</option><option>Neural-Chat</option><option>Nous-Hermes-Mixtral</option><option>OLMo-2</option><option>OpenChat</option><option>Phi</option><option>Phi-3</option><option>Phi-4</option><option>QwQ</option><option>Qwen</option><option>Qwen2.5</option><option>Qwen2.5-Coder</option><option>Qwen3</option><option>SDXL</option><option>SmolLM-2</option><option>Solar</option><option>StarCoder-2</option><option>Starling</option><option>Vicuna</option><option>Wan</option><option>WizardCoder</option><option>Yi</option><option>Z-Image</option><option>Zephyr</option><option>codegemma</option></select></div>
-  <div><label>Pod:</label> <select id="fPod"><option value="">все</option><option>pod1</option><option>pod2</option><option>pod3</option><option>pod4</option><option>pod5</option></select></div>
-  <div><label>B:</label> <input id="fMin" type="number" placeholder="мин"> – <input id="fMax" type="number" placeholder="макс"></div>
-  <div><label>Status:</label> <select id="fStatus"><option value="">все</option><option>OK</option><option>FAIL</option></select></div>
+  <div><label data-en="Search:" data-ru="Поиск:">Search:</label> <input id="fSearch" type="text" class="search-input" data-en-placeholder="model or family name..." data-ru-placeholder="имя модели или семьи..." placeholder="model or family name..."></div>
+  <div><label data-en="Family:" data-ru="Семья:">Family:</label> <select id="fFam"><option value="" data-en="all (60)" data-ru="все (60)">all (60)</option><option>Aya</option><option>CodeLlama</option><option>Codestral</option><option>CogVideoX-5b</option><option>Command-R</option><option>Command-R+</option><option>DeepSeek-Coder</option><option>DeepSeek-R1</option><option>Dolphin-3</option><option>Dolphin-Mixtral</option><option>EXAONE</option><option>FLUX</option><option>Falcon-3</option><option>GLM-4</option><option>GLM-4.7-Flash</option><option>GLM-OCR</option><option>GPT-OSS</option><option>Gemma-2</option><option>Gemma-3</option><option>Granite</option><option>Hermes</option><option>Huihui-GLM-4.6V</option><option>Llama-2</option><option>Llama-3</option><option>Llama-3.1</option><option>Llama-3.2</option><option>Llama-3.3</option><option>Magicoder</option><option>Mistral</option><option>Mistral-Large</option><option>Mistral-Nemo</option><option>Mistral-Small</option><option>Mixtral</option><option>Moondream</option><option>Nemotron</option><option>Nemotron-Mini</option><option>Neural-Chat</option><option>Nous-Hermes-Mixtral</option><option>OLMo-2</option><option>OpenChat</option><option>Phi</option><option>Phi-3</option><option>Phi-4</option><option>QwQ</option><option>Qwen</option><option>Qwen2.5</option><option>Qwen2.5-Coder</option><option>Qwen3</option><option>SDXL</option><option>SmolLM-2</option><option>Solar</option><option>StarCoder-2</option><option>Starling</option><option>Vicuna</option><option>Wan</option><option>WizardCoder</option><option>Yi</option><option>Z-Image</option><option>Zephyr</option><option>codegemma</option></select></div>
+  <div><label>Pod:</label> <select id="fPod"><option value="" data-en="all" data-ru="все">all</option><option>pod1</option><option>pod2</option><option>pod3</option><option>pod4</option><option>pod5</option></select></div>
+  <div><label>B:</label> <input id="fMin" type="number" data-en-placeholder="min" data-ru-placeholder="мин" placeholder="min"> – <input id="fMax" type="number" data-en-placeholder="max" data-ru-placeholder="макс" placeholder="max"></div>
+  <div><label>Status:</label> <select id="fStatus"><option value="" data-en="all" data-ru="все">all</option><option>OK</option><option>FAIL</option></select></div>
   <div class="pills" id="bucketPills"><span class="pill" data-bucket="<5B"><5B</span><span class="pill" data-bucket="5-9B">5-9B</span><span class="pill" data-bucket="10-19B">10-19B</span><span class="pill" data-bucket="20-29B">20-29B</span><span class="pill" data-bucket="30-49B">30-49B</span><span class="pill" data-bucket="50-79B">50-79B</span><span class="pill" data-bucket="80B+">80B+</span><span class="pill" data-bucket="?">?</span></div>
-  <button class="btn-reset" id="btnReset">сброс</button>
+  <button class="btn-reset" id="btnReset" data-en="reset" data-ru="сброс">reset</button>
   <div class="count-badge" id="count"></div>
 </div>
 
 <div class="table-wrap"><table id="tbl"><thead><tr>
-  <th class="sticky-col" data-key="model" title="Имя модели как в Ollama / sd.cpp / HuggingFace. Кликни для сортировки по алфавиту.">Модель</th>
-  <th data-key="type" title="LLM = текст→текст (Ollama). image = текст→картинка (sd.cpp / diffusers). video = текст→видео.">Тип</th>
-  <th data-key="family" title="Семья архитектуры (Qwen2.5, Llama-3.3, FLUX, Wan и т.д.). Используй для группировки.">Семья</th>
-  <th data-key="params_b" class="num" title="Параметров в миллиардах (B). 7=7B Q4. MoE: 8x7b считается как 56. У diffusion часто 0 — не критично.">B</th>
-  <th data-key="bucket" title="Размерная корзина: <5B / 5-9B / 10-19B / 20-29B / 30-49B / 50-79B / 80B+. Кликай pill сверху для фильтра.">Bucket</th>
-  <th data-key="pod" title="На каком из 5 vast.ai V100 podов крутилось. pod1=NV1, pod2=SYS PCIe, pod3/4/5=NV2 (NVLink).">Pod</th>
-  <th data-key="primary" class="num" title="Главная метрика для типа: LLM = avg decode tps (среднее по 4 уровням контекста). Image = sec/картинка. Video = sec/видео. Heat-map: красный=медленно, зелёный=быстро.">primary</th>
-  <th data-key="primary_label" title="Единица primary колонки (tps avg / sec/img / sec/video).">unit</th>
-  <th data-key="runs_count" class="num" title="Сколько раз эта модель прогналась (разные промпты или повторы). LLM = 1 запись = 4 уровня в одной строке. Image/Video = каждая строка = один промпт, runs_count = всего таких прогонов модели.">runs</th>
-  <th data-key="runs_avg" class="num" title="Среднее значение primary по всем запускам этой модели. Если разброс <1% — модель стабильна, цифра достоверна.">avg(runs)</th>
-  <th data-key="runs_spread_pct" class="num" title="Разброс между запусками = (max-min)/avg × 100%. <1% = стабильно как часы. >10% = выпадает один запуск, проверить причину.">spread %</th>
-  <th data-key="short" class="num" title="LLM: decode tokens/sec на коротком промпте (~3K input tok, BVM транскрипция звонка). Heat-map: зелёный = быстро.">short</th>
-  <th data-key="small" class="num" title="LLM: decode tps на small промпте (~5K tok). Сравни с short — деградация показывает чувствительность к контексту.">small</th>
-  <th data-key="medium" class="num" title="LLM: decode tps на medium промпте (~10K tok).">medium</th>
-  <th data-key="large" class="num" title="LLM: decode tps на large промпте (~14K tok, самый длинный звонок 49 мин). Падение vs short — главный индикатор «насколько модель грустит на длинном входе».">large</th>
-  <th data-key="ttft_short" class="num" title="Time To First Token, ms — задержка до первого токена ответа. Включает prefill всего входа. Чем меньше тем отзывчивее.">TTFT s</th>
-  <th data-key="ttft_large" class="num" title="TTFT на large (~14K tok). Часто 20-40 sec — модель долго переваривает контекст перед первым выводом. Важнее decode_tps для UX в чате.">TTFT l</th>
-  <th data-key="prefill_short" class="num" title="Prefill throughput на short, tokens/sec. Сколько токенов входа модель переваривает в секунду. Высокий prefill = быстрая обработка длинных промптов.">pref s</th>
-  <th data-key="prefill_large" class="num" title="Prefill throughput на large. Обычно ниже short из-за O(n²) attention.">pref l</th>
-  <th data-key="tok_large" class="num" title="Сколько токенов в large промпте (BVM транскрипция 49-минутного звонка + eval prompt).">in tok</th>
-  <th data-key="resolution" class="num" title="Image/Video: разрешение. Z-Image=1024×1024, FLUX=1024×1024, SDXL=1024×1024, Wan2.2=480×832, CogVideoX=720×480.">res</th>
-  <th data-key="steps" class="num" title="Image: количество шагов denoising (Z-Image Turbo=8, FLUX=20). Video: количество кадров (Wan2.2=33, CogVideoX=49). Линейно влияет на wall time.">steps/frames</th>
-  <th data-key="peak_vram_gb" class="num" title="Image/Video: пиковое потребление VRAM в GB на одной V100. Если >32 = не лезет в карту, нужен offload на CPU или вторая карта.">VRAM</th>
-  <th data-key="wall_total_s" class="num" title="Суммарное wall time в секундах. LLM: сумма 4 запусков (short+small+medium+large). Image/Video: время одного запуска (одна картинка/видео).">wall s</th>
-  <th data-key="n_levels" class="num" title="Сколько уровней контекста из 4 (short/small/medium/large) отработали без ошибок. 4/4 = идеально. Меньше = модель упала на длинных промптах.">lvl</th>
-  <th data-key="status" title="OK = все запуски прошли. FAIL = модель упала: OOM (не хватило VRAM), NaN (overflow на Volta), 404 (нет в Ollama lib), PREWARM_FAIL (не лезет в GPU при загрузке).">status</th>
+  <th class="sticky-col" data-key="model"
+      data-en="Model" data-ru="Модель"
+      data-en-title="Model name as it appears in Ollama / sd.cpp / HuggingFace. Click to sort alphabetically."
+      data-ru-title="Имя модели как в Ollama / sd.cpp / HuggingFace. Кликни для сортировки по алфавиту.">Model</th>
+  <th data-key="type"
+      data-en="Type" data-ru="Тип"
+      data-en-title="LLM = text→text (Ollama). image = text→image (sd.cpp / diffusers). video = text→video."
+      data-ru-title="LLM = текст→текст (Ollama). image = текст→картинка (sd.cpp / diffusers). video = текст→видео.">Type</th>
+  <th data-key="family"
+      data-en="Family" data-ru="Семья"
+      data-en-title="Architecture family (Qwen2.5, Llama-3.3, FLUX, Wan, etc.). Use for grouping."
+      data-ru-title="Семья архитектуры (Qwen2.5, Llama-3.3, FLUX, Wan и т.д.). Используй для группировки.">Family</th>
+  <th data-key="params_b" class="num"
+      data-en-title="Parameters in billions (B). 7 = 7B Q4. MoE: 8x7b counted as 56. Diffusion often 0 — not critical."
+      data-ru-title="Параметров в миллиардах (B). 7=7B Q4. MoE: 8x7b считается как 56. У diffusion часто 0 — не критично.">B</th>
+  <th data-key="bucket"
+      data-en-title="Size bucket: <5B / 5-9B / 10-19B / 20-29B / 30-49B / 50-79B / 80B+. Click the pills above to filter."
+      data-ru-title="Размерная корзина: <5B / 5-9B / 10-19B / 20-29B / 30-49B / 50-79B / 80B+. Кликай pill сверху для фильтра.">Bucket</th>
+  <th data-key="pod"
+      data-en-title="Which of the 5 vast.ai V100 pods it ran on. pod1=NV1, pod2=SYS PCIe, pod3/4/5=NV2 (NVLink)."
+      data-ru-title="На каком из 5 vast.ai V100 podов крутилось. pod1=NV1, pod2=SYS PCIe, pod3/4/5=NV2 (NVLink).">Pod</th>
+  <th data-key="primary" class="num"
+      data-en-title="Headline metric per type: LLM = avg decode tps (mean across 4 context levels). Image = sec/image. Video = sec/video. Heat-map: red=slow, green=fast."
+      data-ru-title="Главная метрика для типа: LLM = avg decode tps (среднее по 4 уровням контекста). Image = sec/картинка. Video = sec/видео. Heat-map: красный=медленно, зелёный=быстро.">primary</th>
+  <th data-key="primary_label"
+      data-en-title="Unit of the primary column (tps avg / sec/img / sec/video)."
+      data-ru-title="Единица primary колонки (tps avg / sec/img / sec/video).">unit</th>
+  <th data-key="runs_count" class="num"
+      data-en-title="How many times this model ran (different prompts or repeats). LLM = 1 record = 4 levels in one row. Image/Video = each row is one prompt, runs_count = total such runs."
+      data-ru-title="Сколько раз эта модель прогналась (разные промпты или повторы). LLM = 1 запись = 4 уровня в одной строке. Image/Video = каждая строка = один промпт, runs_count = всего таких прогонов модели.">runs</th>
+  <th data-key="runs_avg" class="num"
+      data-en-title="Mean primary across all runs of this model. Spread <1% → model is stable, the number is trustworthy."
+      data-ru-title="Среднее значение primary по всем запускам этой модели. Если разброс <1% — модель стабильна, цифра достоверна.">avg(runs)</th>
+  <th data-key="runs_spread_pct" class="num"
+      data-en-title="Run-to-run spread = (max-min)/avg × 100%. <1% = clockwork stable. >10% = one run is an outlier, investigate."
+      data-ru-title="Разброс между запусками = (max-min)/avg × 100%. <1% = стабильно как часы. >10% = выпадает один запуск, проверить причину.">spread %</th>
+  <th data-key="short" class="num"
+      data-en-title="LLM: decode tokens/sec on a short prompt (~3K input tok, BVM call transcript). Heat-map: green = fast."
+      data-ru-title="LLM: decode tokens/sec на коротком промпте (~3K input tok, BVM транскрипция звонка). Heat-map: зелёный = быстро.">short</th>
+  <th data-key="small" class="num"
+      data-en-title="LLM: decode tps on a small prompt (~5K tok). Compare to short — the gap shows context sensitivity."
+      data-ru-title="LLM: decode tps на small промпте (~5K tok). Сравни с short — деградация показывает чувствительность к контексту.">small</th>
+  <th data-key="medium" class="num"
+      data-en-title="LLM: decode tps on a medium prompt (~10K tok)."
+      data-ru-title="LLM: decode tps на medium промпте (~10K tok).">medium</th>
+  <th data-key="large" class="num"
+      data-en-title="LLM: decode tps on a large prompt (~14K tok, longest call = 49 min). Drop vs short = the main 'how much the model struggles on long input' signal."
+      data-ru-title="LLM: decode tps на large промпте (~14K tok, самый длинный звонок 49 мин). Падение vs short — главный индикатор «насколько модель грустит на длинном входе».">large</th>
+  <th data-key="ttft_short" class="num"
+      data-en-title="Time To First Token, ms — latency before the first output token. Includes prefill of the whole input. Lower = snappier."
+      data-ru-title="Time To First Token, ms — задержка до первого токена ответа. Включает prefill всего входа. Чем меньше тем отзывчивее.">TTFT s</th>
+  <th data-key="ttft_large" class="num"
+      data-en-title="TTFT on large (~14K tok). Often 20-40 s — model chews the context for ages before the first output. Matters more than decode_tps for chat UX."
+      data-ru-title="TTFT на large (~14K tok). Часто 20-40 sec — модель долго переваривает контекст перед первым выводом. Важнее decode_tps для UX в чате.">TTFT l</th>
+  <th data-key="prefill_short" class="num"
+      data-en-title="Prefill throughput on short, tokens/sec. How many input tokens the model digests per second. High prefill = fast long-prompt handling."
+      data-ru-title="Prefill throughput на short, tokens/sec. Сколько токенов входа модель переваривает в секунду. Высокий prefill = быстрая обработка длинных промптов.">pref s</th>
+  <th data-key="prefill_large" class="num"
+      data-en-title="Prefill throughput on large. Usually lower than short due to O(n²) attention."
+      data-ru-title="Prefill throughput на large. Обычно ниже short из-за O(n²) attention.">pref l</th>
+  <th data-key="tok_large" class="num"
+      data-en-title="Number of tokens in the large prompt (BVM 49-min call transcript + eval prompt)."
+      data-ru-title="Сколько токенов в large промпте (BVM транскрипция 49-минутного звонка + eval prompt).">in tok</th>
+  <th data-key="resolution" class="num"
+      data-en-title="Image/Video: resolution. Z-Image=1024×1024, FLUX=1024×1024, SDXL=1024×1024, Wan2.2=480×832, CogVideoX=720×480."
+      data-ru-title="Image/Video: разрешение. Z-Image=1024×1024, FLUX=1024×1024, SDXL=1024×1024, Wan2.2=480×832, CogVideoX=720×480.">res</th>
+  <th data-key="steps" class="num"
+      data-en-title="Image: denoising steps (Z-Image Turbo=8, FLUX=20). Video: frames (Wan2.2=33, CogVideoX=49). Linear effect on wall time."
+      data-ru-title="Image: количество шагов denoising (Z-Image Turbo=8, FLUX=20). Video: количество кадров (Wan2.2=33, CogVideoX=49). Линейно влияет на wall time.">steps/frames</th>
+  <th data-key="peak_vram_gb" class="num"
+      data-en-title="Image/Video: peak VRAM (GB) on a single V100. >32 = doesn't fit one card, need CPU offload or a second card."
+      data-ru-title="Image/Video: пиковое потребление VRAM в GB на одной V100. Если >32 = не лезет в карту, нужен offload на CPU или вторая карта.">VRAM</th>
+  <th data-key="wall_total_s" class="num"
+      data-en-title="Total wall time, seconds. LLM: sum of 4 runs (short+small+medium+large). Image/Video: a single run (one image / one video)."
+      data-ru-title="Суммарное wall time в секундах. LLM: сумма 4 запусков (short+small+medium+large). Image/Video: время одного запуска (одна картинка/видео).">wall s</th>
+  <th data-key="n_levels" class="num"
+      data-en-title="How many of 4 context levels (short/small/medium/large) completed without errors. 4/4 = perfect. Less = model crashed on long prompts."
+      data-ru-title="Сколько уровней контекста из 4 (short/small/medium/large) отработали без ошибок. 4/4 = идеально. Меньше = модель упала на длинных промптах.">lvl</th>
+  <th data-key="status"
+      data-en-title="OK = all runs passed. FAIL = the model died: OOM (out of VRAM), NaN (Volta overflow), 404 (not in Ollama lib), PREWARM_FAIL (doesn't fit GPU at load)."
+      data-ru-title="OK = все запуски прошли. FAIL = модель упала: OOM (не хватило VRAM), NaN (overflow на Volta), 404 (нет в Ollama lib), PREWARM_FAIL (не лезет в GPU при загрузке).">status</th>
 </tr></thead><tbody></tbody></table></div>
 
 <script>
@@ -201,7 +267,9 @@ function apply() {
     th.classList.remove("sorted", "asc");
     if (th.dataset.key === STATE.sortKey) { th.classList.add("sorted"); if (STATE.sortDir > 0) th.classList.add("asc"); }
   });
-  document.getElementById("count").textContent = `показано ${cur.length} / ${DATA.length}`;
+  const _lang = (window.LANG || 'en');
+  const _label = _lang === 'ru' ? 'показано' : 'showing';
+  document.getElementById("count").textContent = `${_label} ${cur.length} / ${DATA.length}`;
 }
 
 document.querySelectorAll("thead th").forEach(th => th.addEventListener("click", () => {
@@ -231,18 +299,52 @@ document.getElementById("btnReset").addEventListener("click", () => {
   document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
   apply();
 });
-apply();
+
+// ── i18n ─────────────────────────────────────────────────────────────────────
+function applyLang(lang) {
+  if (lang !== "en" && lang !== "ru") lang = "en";
+  window.LANG = lang;
+  document.documentElement.lang = lang;
+  try { localStorage.setItem("v100bench.lang", lang); } catch(e) {}
+  // text content
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const v = el.getAttribute("data-" + lang);
+    if (v != null) el.innerHTML = v;
+  });
+  // title
+  document.querySelectorAll("[data-en-title]").forEach(el => {
+    const v = el.getAttribute("data-" + lang + "-title");
+    if (v != null) el.setAttribute("title", v);
+  });
+  // placeholder
+  document.querySelectorAll("[data-en-placeholder]").forEach(el => {
+    const v = el.getAttribute("data-" + lang + "-placeholder");
+    if (v != null) el.setAttribute("placeholder", v);
+  });
+  // toggle active state
+  document.querySelectorAll(".lang-toggle button").forEach(b => {
+    b.classList.toggle("active", b.dataset.lang === lang);
+  });
+  // refresh dynamic count badge
+  if (typeof apply === "function") apply();
+}
+document.querySelectorAll(".lang-toggle button").forEach(b => {
+  b.addEventListener("click", () => applyLang(b.dataset.lang));
+});
+let _saved = "en";
+try { _saved = localStorage.getItem("v100bench.lang") || "en"; } catch(e) {}
+applyLang(_saved);
 </script>
 
 <div style="margin-top: 24px; padding: 20px 22px; background: #fff; border-radius: 10px; border: 1px solid #e2e4e8; font-size: 13px; line-height: 1.7;">
-  <div style="font-weight:600; color:#0a0a0a; margin-bottom:10px; font-size:14px;">Что ещё в репо</div>
+  <div style="font-weight:600; color:#0a0a0a; margin-bottom:10px; font-size:14px;" data-en="What else is in the repo" data-ru="Что ещё в репо">What else is in the repo</div>
   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px 22px;">
-    <a href="benchmarks/ollama/dashboard.html" style="color:#1f6feb; text-decoration:none;">→ <b>Графики и распределения</b> — tps vs B, деградация по контексту, NVLink vs PCIe</a>
-    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/FULL_REPORT.md" style="color:#1f6feb; text-decoration:none;">→ <b>FULL_REPORT.md</b> — полный отчёт по 108 LLM</a>
-    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/MODEL_CARDS.md" style="color:#1f6feb; text-decoration:none;">→ <b>MODEL_CARDS.md</b> — 108 карточек с конфигом и примером ответа</a>
-    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/V100_CHECKLIST.md" style="color:#1f6feb; text-decoration:none;">→ <b>V100_CHECKLIST.md</b> — 17 граблей Volta cc 7.0 с решениями</a>
-    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/VARIANCE_FINDINGS.md" style="color:#1f6feb; text-decoration:none;">→ <b>VARIANCE_FINDINGS.md</b> — почему N=1 валиден (CV ≤ 0.10%)</a>
-    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/COSTS.md" style="color:#1f6feb; text-decoration:none;">→ <b>COSTS.md</b> — vast.ai / Lambda / RunPod — где сейчас брать V100</a>
+    <a href="benchmarks/ollama/dashboard.html" style="color:#1f6feb; text-decoration:none;" data-en="→ &lt;b&gt;Charts and distributions&lt;/b&gt; — tps vs B, degradation by context, NVLink vs PCIe" data-ru="→ &lt;b&gt;Графики и распределения&lt;/b&gt; — tps vs B, деградация по контексту, NVLink vs PCIe">→ <b>Charts and distributions</b> — tps vs B, degradation by context, NVLink vs PCIe</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/FULL_REPORT.md" style="color:#1f6feb; text-decoration:none;" data-en="→ &lt;b&gt;FULL_REPORT.md&lt;/b&gt; — full report for all 108 LLMs" data-ru="→ &lt;b&gt;FULL_REPORT.md&lt;/b&gt; — полный отчёт по 108 LLM">→ <b>FULL_REPORT.md</b> — full report for all 108 LLMs</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/MODEL_CARDS.md" style="color:#1f6feb; text-decoration:none;" data-en="→ &lt;b&gt;MODEL_CARDS.md&lt;/b&gt; — 108 cards with config and sample answer" data-ru="→ &lt;b&gt;MODEL_CARDS.md&lt;/b&gt; — 108 карточек с конфигом и примером ответа">→ <b>MODEL_CARDS.md</b> — 108 cards with config and sample answer</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/V100_CHECKLIST.md" style="color:#1f6feb; text-decoration:none;" data-en="→ &lt;b&gt;V100_CHECKLIST.md&lt;/b&gt; — 17 Volta cc 7.0 traps with fixes" data-ru="→ &lt;b&gt;V100_CHECKLIST.md&lt;/b&gt; — 17 граблей Volta cc 7.0 с решениями">→ <b>V100_CHECKLIST.md</b> — 17 Volta cc 7.0 traps with fixes</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/VARIANCE_FINDINGS.md" style="color:#1f6feb; text-decoration:none;" data-en="→ &lt;b&gt;VARIANCE_FINDINGS.md&lt;/b&gt; — why N=1 is valid (CV ≤ 0.10%)" data-ru="→ &lt;b&gt;VARIANCE_FINDINGS.md&lt;/b&gt; — почему N=1 валиден (CV ≤ 0.10%)">→ <b>VARIANCE_FINDINGS.md</b> — why N=1 is valid (CV ≤ 0.10%)</a>
+    <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/COSTS.md" style="color:#1f6feb; text-decoration:none;" data-en="→ &lt;b&gt;COSTS.md&lt;/b&gt; — vast.ai / Lambda / RunPod — where to rent V100 today" data-ru="→ &lt;b&gt;COSTS.md&lt;/b&gt; — vast.ai / Lambda / RunPod — где сейчас брать V100">→ <b>COSTS.md</b> — vast.ai / Lambda / RunPod — where to rent V100 today</a>
   </div>
 </div>
 
