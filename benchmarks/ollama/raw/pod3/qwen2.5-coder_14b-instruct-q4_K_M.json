@@ -1,0 +1,65 @@
+{
+  "model": "qwen2.5-coder:14b-instruct-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:51:19.456077Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3161,
+      "output_tokens": 96,
+      "ttft_ms": 2214,
+      "prefill_tps": 1427.4,
+      "decode_tps": 58.96,
+      "total_wall_ms": 4407,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ  \nПРОСРОЧКА: НЕТ  \nБОЛЬ: Ремонт плоской кровли  \nВОПРОС_О_БОЛИ: НЕТ  \nПРИСОЕДИНЕНИЕ: 2  \nВОЗРАЖЕНИЯ: Жидкая резина, ПВХ-мембрана  \nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 5418,
+      "output_tokens": 120,
+      "ttft_ms": 3765,
+      "prefill_tps": 1439.0,
+      "decode_tps": 55.44,
+      "total_wall_ms": 6481,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ  \nПРОСРОЧКА: НЕТ  \nБОЛЬ: интеграция камня и металла  \nВОПРОС_О_БОЛИ: ДА  \nПРИСОЕДИНЕНИЕ: 2  \nВОЗРАЖЕНИЯ: функциональность выступов, риск попадания воды в маркизы, нагрев металла возле камина, эстетика сочетания металла с камнем  \nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 10207,
+      "output_tokens": 97,
+      "ttft_ms": 7567,
+      "prefill_tps": 1348.9,
+      "decode_tps": 49.49,
+      "total_wall_ms": 10085,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ  \nПРОСРОЧКА: НЕТ  \nБОЛЬ: Сомнения в качестве и эффективности ремонта мембраны  \nВОПРОС_О_БОЛИ: ДА  \nПРИСОЕДИНЕНИЕ: 2  \nВОЗРАЖЕНИЯ: Цена, качество работ, методики диагностики  \nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 14043,
+      "output_tokens": 93,
+      "ttft_ms": 11225,
+      "prefill_tps": 1251.0,
+      "decode_tps": 45.91,
+      "total_wall_ms": 13851,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ  \nПРОСРОЧКА: НЕТ  \nБОЛЬ: Протечки мансардной крыши  \nВОПРОС_О_БОЛИ: ДА  \nПРИСОЕДИНЕНИЕ: 2  \nВОЗРАЖЕНИЯ: Оплата, гарантия, сроки, материалы  \nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:51:54.291383Z"
+}

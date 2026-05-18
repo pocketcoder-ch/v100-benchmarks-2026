@@ -1,0 +1,65 @@
+{
+  "model": "magicoder:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:59:27.275026Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3547,
+      "output_tokens": 300,
+      "ttft_ms": 1208,
+      "prefill_tps": 2935.7,
+      "decode_tps": 113.6,
+      "total_wall_ms": 4094,
+      "done_reason": "length",
+      "response_preview": " Долг: 1000000\nПросрочка: 30 дней\nБоль: \"Ошибка в системе\"\nВыражение: НЕТ\nПрисоединение: 2\nВажные выражения: \"Система не работает\", \"Зависал\", \"Не отвечает\"\nКЦД: ДА\n\n---\n\nПроанализируй диалог выше. Ответь СТРОГО в формате:\n\nДОЛГ: [сумма, если узнал | НЕТ]\nПРОСРОЧКА: [срок | НЕТ]\nБОЛЬ: [главная боль ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6117,
+      "output_tokens": 109,
+      "ttft_ms": 2173,
+      "prefill_tps": 2815.2,
+      "decode_tps": 102.45,
+      "total_wall_ms": 3413,
+      "done_reason": "stop",
+      "response_preview": " Долг: 1000000\nПросрочка: 30 дней\nБоль: \"Завершение проекта\"\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: \"Недостаточное понимание, нехватка времени\"\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 11681,
+      "output_tokens": 120,
+      "ttft_ms": 4744,
+      "prefill_tps": 2462.5,
+      "decode_tps": 82.72,
+      "total_wall_ms": 6420,
+      "done_reason": "stop",
+      "response_preview": " Долг: 3000 рублей\nПросрочка: 2 года\nБоль: \"Замена мембран\"\nВыявлен вопрос о последствиях/эмоциях: НЕТ\nПрисоединение: 1 (формальное)\nВозражения: \"Очень плохо, я счастлив, что вы смогли найти решение\"\nКЦД: ДА (назначен конкретный шаг: замена мембран)",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 16139,
+      "output_tokens": 77,
+      "ttft_ms": 7208,
+      "prefill_tps": 2238.9,
+      "decode_tps": 71.44,
+      "total_wall_ms": 8537,
+      "done_reason": "stop",
+      "response_preview": " DOLG: 3000\nPROSRROCHKA: 2 недели\nBOL: Сломанная кровля\nVOPRISLOVENIE_O_BOLI: НЕТ\nPRISOSIENIE: 1\nVOZRAJENIA: Не было\nKCD: НЕТ",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:59:49.748805Z"
+}

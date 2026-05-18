@@ -1,0 +1,65 @@
+{
+  "model": "mixtral:8x7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:21:31.542840Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3807,
+      "output_tokens": 108,
+      "ttft_ms": 5341,
+      "prefill_tps": 712.7,
+      "decode_tps": 81.24,
+      "total_wall_ms": 6830,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Требуется ремонт плоской кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6610,
+      "output_tokens": 124,
+      "ttft_ms": 9399,
+      "prefill_tps": 703.2,
+      "decode_tps": 77.74,
+      "total_wall_ms": 11163,
+      "done_reason": "stop",
+      "response_preview": "\n\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА (назначено обсуждение сметы и объёма работ в понедельник)",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 12859,
+      "output_tokens": 149,
+      "ttft_ms": 18971,
+      "prefill_tps": 677.8,
+      "decode_tps": 72.49,
+      "total_wall_ms": 21220,
+      "done_reason": "stop",
+      "response_preview": "\n\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Поиск подрядчика для будущих ремонтов кровли, изношенные мембраны 2004–2008 гг. и сомнения в качестве текущих работ\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 3 (сильное)\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 17876,
+      "output_tokens": 81,
+      "ttft_ms": 27400,
+      "prefill_tps": 652.4,
+      "decode_tps": 68.51,
+      "total_wall_ms": 28788,
+      "done_reason": "stop",
+      "response_preview": "\nDOLG: НЕТ\nPROSROCHKA: НЕТ\nBOL: Течь кровли (не уточнено)\nVOпроs_O_BOLI: ДА\nPRISOEDINENIE: 2\nVozrazheniya: НЕ БЫЛО\nKCD: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:22:39.555005Z"
+}

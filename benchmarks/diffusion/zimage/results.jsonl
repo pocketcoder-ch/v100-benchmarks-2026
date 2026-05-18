@@ -1,0 +1,5 @@
+{"model":"Z-Image-Turbo-Q8","stack":"sd.cpp bf16","prompt_id":"ai_agent_database","resolution":"1024x1024","steps":8,"wall_sec":63.989340027,"png_size":1999390,"image":"zimage_ai_agent_database.png"}
+{"model":"Z-Image-Turbo-Q8","stack":"sd.cpp bf16","prompt_id":"office_winter","resolution":"1024x1024","steps":8,"wall_sec":64.196595727,"png_size":1983256,"image":"zimage_office_winter.png"}
+{"model":"Z-Image-Turbo-Q8","stack":"sd.cpp bf16","prompt_id":"neon_city","resolution":"1024x1024","steps":8,"wall_sec":64.825541601,"png_size":2167161,"image":"zimage_neon_city.png"}
+{"model":"Z-Image-Turbo-Q8","stack":"sd.cpp bf16","prompt_id":"call_center_operator","resolution":"1024x1024","steps":8,"wall_sec":63.960481943,"png_size":1585939,"image":"zimage_call_center_operator.png"}
+{"model":"Z-Image-Turbo-Q8","stack":"sd.cpp bf16","prompt_id":"speech_analytics_diagram","resolution":"1024x1024","steps":8,"wall_sec":64.276340334,"png_size":704726,"image":"zimage_speech_analytics_diagram.png"}

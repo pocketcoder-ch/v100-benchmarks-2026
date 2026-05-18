@@ -1,0 +1,65 @@
+{
+  "model": "qwq:32b-preview-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:50:17.449837Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3168,
+      "output_tokens": 111,
+      "ttft_ms": 4679,
+      "prefill_tps": 677.1,
+      "decode_tps": 30.23,
+      "total_wall_ms": 9032,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\n\nПРОСРОЧКА: НЕТ\n\nБОЛЬ: Ремонт плоской кровли и проблемы с гидроизоляцией.\n\nВОПРОС_О_БОЛИ: НЕТ\n\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\n\nВОЗРАЖЕНИЯ: НЕ БЫЛО\n\nКЦД: НЕТ (нет конкретного следующего шага)",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 5425,
+      "output_tokens": 86,
+      "ttft_ms": 7881,
+      "prefill_tps": 688.4,
+      "decode_tps": 29.08,
+      "total_wall_ms": 11483,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\n\nПРОСРОЧКА: НЕТ\n\nБОЛЬ: НЕ ВЫЯВЛЕНА\n\nВОПРОС_О_БОЛИ: НЕТ\n\nПРИСОЕДИНЕНИЕ: 0\n\nВОЗРАЖЕНИЯ: НЕ БЫЛО\n\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 10214,
+      "output_tokens": 164,
+      "ttft_ms": 15402,
+      "prefill_tps": 663.1,
+      "decode_tps": 26.47,
+      "total_wall_ms": 22464,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\n\nПРОСРОЧКА: НЕТ\n\nБОЛЬ: Сомнения в качестве ремонтных работ кровли\n\nВОПРОС_О_БОЛИ: НЕТ\n\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\n\nВОЗРАЖЕНИЯ: Сомнения в эффективности ремонта старой мембраны, сомнения в стоимости работ, желание найти надежного подрядчика для долгосрочного сотрудничества\n\nКЦД: ДА (договор",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 14050,
+      "output_tokens": 120,
+      "ttft_ms": 22382,
+      "prefill_tps": 627.8,
+      "decode_tps": 24.95,
+      "total_wall_ms": 28007,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\n\nПРОСРОЧКА: НЕТ\n\nБОЛЬ: Протечки мансардной крыши\n\nВОПРОС_О_БОЛИ: НЕТ\n\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\n\nВОЗРАЖЕНИЯ: Сомнения в стоимости, опасения по оплате и качеству работ\n\nКЦД: ДА (согласованы даты выезда для замера)",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:51:28.442102Z"
+}

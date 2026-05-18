@@ -1,0 +1,65 @@
+{
+  "model": "olmo2:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:06:25.468680Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 4096,
+      "output_tokens": 115,
+      "ttft_ms": 1330,
+      "prefill_tps": 3080.0,
+      "decode_tps": 91.3,
+      "total_wall_ms": 2946,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: | 30 минут\nПРОСРОЧКА: | 2 месяца\nБОЛЬ: | Проблемы с кровлейми\nВОПРОС_О_БОЛИ: | Да\nПРИСОЕДИНЕНИЕ: | 2\nВОЗРАЖЕНИЯ: | schedule appointment, assess damage, discuss options\n\nКЦД: | Yes, appointment scheduled",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 100,
+      "ttft_ms": 1337,
+      "prefill_tps": 3063.1,
+      "decode_tps": 91.21,
+      "total_wall_ms": 2730,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 15000\nПРОСРОЧКА: 30 июля\nБОЛЬ: Страхование потери работ\nВОПРОС_О_БОЛИ: Да\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: не указано\n\nКЦД: Нет",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 101,
+      "ttft_ms": 1331,
+      "prefill_tps": 3077.3,
+      "decode_tps": 91.35,
+      "total_wall_ms": 2791,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 1500\nПРОСРОЧКА: 6 месяцев\nБОЛЬ: Страх о переплате\nВОПРОС_О_БОЛИ: Да\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: не указано\n\nКЦД: Нет",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 107,
+      "ttft_ms": 1339,
+      "prefill_tps": 3059.1,
+      "decode_tps": 90.82,
+      "total_wall_ms": 2949,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 15000\nПРОСРОЧКА: 2 месяца\nБОЛЬ: Проблемы с крышей и бюджетом\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: не указано\n\nКЦД: Нет",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:06:36.895495Z"
+}

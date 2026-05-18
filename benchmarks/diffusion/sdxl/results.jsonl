@@ -1,0 +1,5 @@
+{"model":"SDXL-base-1.0","stack":"sd.cpp pure GPU FP16","prompt_id":"call_center","resolution":"1024x1024","steps":30,"cfg_scale":7.0,"wall_sec":26}
+{"model":"SDXL-base-1.0","stack":"sd.cpp pure GPU FP16","prompt_id":"speech_diagram","resolution":"1024x1024","steps":30,"cfg_scale":7.0,"wall_sec":27}
+{"model":"SDXL-base-1.0","stack":"sd.cpp pure GPU FP16","prompt_id":"ai_agent","resolution":"1024x1024","steps":30,"cfg_scale":7.0,"wall_sec":26}
+{"model":"SDXL-base-1.0","stack":"sd.cpp pure GPU FP16","prompt_id":"office_winter","resolution":"1024x1024","steps":30,"cfg_scale":7.0,"wall_sec":26}
+{"model":"SDXL-base-1.0","stack":"sd.cpp pure GPU FP16","prompt_id":"neon_city","resolution":"1024x1024","steps":30,"cfg_scale":7.0,"wall_sec":26}

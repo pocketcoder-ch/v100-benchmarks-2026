@@ -1,0 +1,65 @@
+{
+  "model": "codegemma:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:00:28.773095Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2608,
+      "output_tokens": 60,
+      "ttft_ms": 1122,
+      "prefill_tps": 2323.5,
+      "decode_tps": 100.92,
+      "total_wall_ms": 2107,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт кровли\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Не было\nКЦД: Нет",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4497,
+      "output_tokens": 61,
+      "ttft_ms": 2080,
+      "prefill_tps": 2161.8,
+      "decode_tps": 96.3,
+      "total_wall_ms": 3104,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Невыявлена\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: Не было\nКЦД: Да",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8192,
+      "output_tokens": 68,
+      "ttft_ms": 4142,
+      "prefill_tps": 1977.9,
+      "decode_tps": 31.26,
+      "total_wall_ms": 6713,
+      "done_reason": "stop",
+      "response_preview": "**ДОЛГ:** НЕТ\n**ПРОСРОЧКА:** НЕТ\n**БОЛЬ:** Невыявлена\n**ВОПРОС_О_БОЛИ:** ДА\n**ПРИСОЕДИНЕНИЕ:** 2\n**ВОЗРАЖЕНИЯ:** Не было\n**КЦД:** Да",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 8192,
+      "output_tokens": 69,
+      "ttft_ms": 4149,
+      "prefill_tps": 1974.6,
+      "decode_tps": 31.55,
+      "total_wall_ms": 6768,
+      "done_reason": "stop",
+      "response_preview": "**ДОЛГ:** НЕТ\n**ПРОСРОЧКА:** НЕТ\n**БОЛЬ:** Проблем с кровлей\n**ВОПРОС_О_БОЛИ:** ДА\n**ПРИСОЕДИНЕНИЕ:** 2\n**ВОЗРАЖЕНИЯ:** Не было\n**КЦД:** Да",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:00:47.476381Z"
+}

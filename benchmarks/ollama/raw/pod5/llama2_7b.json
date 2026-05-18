@@ -1,0 +1,65 @@
+{
+  "model": "llama2:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:14:33.329471Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3533,
+      "output_tokens": 168,
+      "ttft_ms": 1186,
+      "prefill_tps": 2977.8,
+      "decode_tps": 113.92,
+      "total_wall_ms": 2903,
+      "done_reason": "stop",
+      "response_preview": "\nDOLG: 105664 (сумма в рублях)\nPROSROCHKA: не указано (срок договора или сроки выполнения работ)\nBOL': \"Обработка кровли\" (главная боль клиента)\nVOPROS_O_Boli: да (был вопрос про последствия/эмоции)\nPRIZOEDINENIE: 3 (сильное присоединение)\nVOZRACHENIYA: не указано (не было назначено конкретного след",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 103,
+      "ttft_ms": 1374,
+      "prefill_tps": 2981.1,
+      "decode_tps": 60.04,
+      "total_wall_ms": 3294,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: $100\nПРОСРОЧКА: 2 недели\nБОЛЬ: Недовольство качеством работ и сроками выполнения\nВОПРОС_О_БОLI: Нет\nПРИСОЕДИНЕНИЕ: 1 (хорошее)\nВОЗРАЖЕНИЯ: None\nКЦД: Нет",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 95,
+      "ttft_ms": 1382,
+      "prefill_tps": 2963.6,
+      "decode_tps": 57.84,
+      "total_wall_ms": 3271,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: Не узнал\nПРОСРОЧКА: Нет\nБОЛЬ: Не выражен\nВОПРОС_О_БОЛИ: Нет\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: Не указаны\nКЦД: Нет",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 95,
+      "ttft_ms": 1381,
+      "prefill_tps": 2966.0,
+      "decode_tps": 57.81,
+      "total_wall_ms": 3307,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: Не узнал\nПРОСРОЧКА: 2-3 недели\nБОЛЬ: Не выразил\nВОПРОС_О_БОЛИ: Нет\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Не указал\nКЦД: Нет",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:14:46.115518Z"
+}

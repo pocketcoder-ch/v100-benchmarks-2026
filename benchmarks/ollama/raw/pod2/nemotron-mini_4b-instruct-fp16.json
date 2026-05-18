@@ -1,0 +1,65 @@
+{
+  "model": "nemotron-mini:4b-instruct-fp16",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T13:17:04.682540Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2742,
+      "output_tokens": 89,
+      "ttft_ms": 643,
+      "prefill_tps": 4264.1,
+      "decode_tps": 89.19,
+      "total_wall_ms": 2356,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: 0\nПРОСРОЧКА: Нет\nБОЛЬ: Трещины и вздутие стяжки под рулонным покрытием\nВОПРОС_О_БОЛИ: Да\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: напыление, рубероид, мембрана ПВХ\nКЦД: Нет",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 92,
+      "ttft_ms": 622,
+      "prefill_tps": 6589.1,
+      "decode_tps": 72.9,
+      "total_wall_ms": 2582,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: 0\nПРОСРОЧКА: НЕТ\nБОЛЬ: Главная боль клиента - получить корректный расчёт и смету на обшивку металлом с учётом согласования с дизайнерами.\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: нет\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 70,
+      "ttft_ms": 618,
+      "prefill_tps": 6623.1,
+      "decode_tps": 69.6,
+      "total_wall_ms": 2321,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: 100000\nПРОСРОЧКА: 3 месяца\nБОЛЬ: Невыявлен\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: \nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 93,
+      "ttft_ms": 623,
+      "prefill_tps": 6575.8,
+      "decode_tps": 72.98,
+      "total_wall_ms": 2663,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: 100000 руб.\nПРОСРОЧКА: 3 месяца назад.\nБОЛЬ: Маржа кровли протекает.\nВОПРОС_О_БОЛИ: ДА.\nПРИСОЕДИНЕНИЕ: 2.\nВОЗРАЖЕНИЯ: металлочерепица, гибкая черепица.\nКЦД: ДА.",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T13:17:14.611759Z"
+}

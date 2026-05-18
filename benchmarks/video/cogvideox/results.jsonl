@@ -1,0 +1,3 @@
+{"model":"CogVideoX-5b","stack":"diffusers fp16 + cpu-offload + vae-tiling-slicing","prompt_id":"office_winter","wall_sec":534.6,"peak_vram_gb":14.01,"frames":49,"fps":8,"resolution":"720x480","image":"cogvideox_office_winter.mp4","note":"Volta sm_70 FP16, no BF16 needed; vae kept FP16 (cast to FP32 broke decode)"}
+{"model":"CogVideoX-5b","stack":"diffusers fp16 + cpu-offload + vae-tiling-slicing","prompt_id":"ai_agent","wall_sec":536.8,"peak_vram_gb":14.01,"frames":49,"fps":8,"resolution":"720x480","image":"cogvideox_ai_agent.mp4"}
+{"model":"CogVideoX-5b","stack":"diffusers fp16 + cpu-offload + vae-tiling-slicing","prompt_id":"call_center","wall_sec":536.7,"peak_vram_gb":14.01,"frames":49,"fps":8,"resolution":"720x480","image":"cogvideox_call_center.mp4"}

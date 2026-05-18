@@ -1,0 +1,65 @@
+{
+  "model": "nemotron-mini:4b-instruct-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T10:02:48.626689Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2742,
+      "output_tokens": 57,
+      "ttft_ms": 532,
+      "prefill_tps": 5155.4,
+      "decode_tps": 153.08,
+      "total_wall_ms": 1420,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: нет\nПРОСРОЧКА: нет\nБОЛЬ: не выявлена\nВОПРОС_О_БОЛИ: да\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: не было",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 60,
+      "ttft_ms": 784,
+      "prefill_tps": 5226.7,
+      "decode_tps": 97.75,
+      "total_wall_ms": 1908,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: 0\nПРОСРОЧКА: нет\nБОЛЬ: нет\nВОПРОС_О_БОЛИ: нет\nПРИСОЕДИНЕНИЕ: 0\nВОЗРАЖЕНИЯ: нет\nКЦД: нет",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 3,
+      "ttft_ms": 790,
+      "prefill_tps": 5186.4,
+      "decode_tps": 13.68,
+      "total_wall_ms": 1403,
+      "done_reason": "stop",
+      "response_preview": " НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 107,
+      "ttft_ms": 786,
+      "prefill_tps": 5213.3,
+      "decode_tps": 113.71,
+      "total_wall_ms": 2404,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: 0\nПРОСРОЧКА: нет\nБОЛЬ: протечки мансардной крыши с натуральной черепицей\nВОПРОС_О_БОЛИ: нет\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: контейнер 8 м3, доставка 9000 руб. за тип доставки, проживание бригады, накладные расходы 8%\nКЦД: да",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T10:02:55.772138Z"
+}

@@ -1,0 +1,65 @@
+{
+  "model": "phi3:3.8b-mini-128k-instruct-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:54:16.038685Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3522,
+      "output_tokens": 133,
+      "ttft_ms": 826,
+      "prefill_tps": 4261.5,
+      "decode_tps": 93.75,
+      "total_wall_ms": 2430,
+      "done_reason": "stop",
+      "response_preview": "[redacted: model echoed PII from input — see VARIANCE_FINDINGS.md / PII policy]",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6092,
+      "output_tokens": 134,
+      "ttft_ms": 1518,
+      "prefill_tps": 4014.4,
+      "decode_tps": 71.42,
+      "total_wall_ms": 3577,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 0 (не указано в диалоге)\nПРОСРОЧКА: 1 (нет)\nБОЛЬ: НЕТ (не указано в диалоге)\nВОПРОС_О_БОЛИ: 1 (нет)\nПРИСОЕДИНЕНИЕ: 2 (формальный обсуждение, хороший)\nВОЗРАЖЕНИЯ: 0 (не указано в диалоге)\nКЦД: 1 (да)",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 11656,
+      "output_tokens": 160,
+      "ttft_ms": 3440,
+      "prefill_tps": 3388.0,
+      "decode_tps": 46.82,
+      "total_wall_ms": 7087,
+      "done_reason": "stop",
+      "response_preview": "[redacted: model echoed PII from input — see VARIANCE_FINDINGS.md / PII policy]",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 16114,
+      "output_tokens": 145,
+      "ttft_ms": 5345,
+      "prefill_tps": 3014.6,
+      "decode_tps": 36.68,
+      "total_wall_ms": 9537,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 3000 рублей (из примера)\nПРОСРОЧКА: 1 год (для частичных работ)\nБОЛЬ: Протечь крыль, спросить о ремонте или замене черепицы\nВОЗРАЖЕНИЯ: 2, 3, 1 (уточнение, вопрос о ремонте/замене, вопрос о сроках)\nКЦД: ДА (подготовительный контроль на объект и предложение дать примерную смету)",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:54:38.680915Z"
+}

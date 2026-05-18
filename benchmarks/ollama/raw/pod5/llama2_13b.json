@@ -1,0 +1,65 @@
+{
+  "model": "llama2:13b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:15:47.257520Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3533,
+      "output_tokens": 156,
+      "ttft_ms": 2339,
+      "prefill_tps": 1510.5,
+      "decode_tps": 66.6,
+      "total_wall_ms": 4913,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: 0 (не узнал)\nПРОСРОЧКА: НЕТ (срок не согласован)\nБОЛЬ: НЕ ВЫЯВЛЕНА (не выявлена главная боль клиента)\nВОПРОС_О_БОЛИ: НЕТ (не был вопрос про последствия/эмоции)\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: [] (нет)\nКЦД: НЕТ (не был назначен конкретный следующий шаг)",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 107,
+      "ttft_ms": 2565,
+      "prefill_tps": 1597.1,
+      "decode_tps": 37.39,
+      "total_wall_ms": 5632,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: \n\nПРОСРОЧКА: \n\nБОЛЬ: не выявлена\n\nВОПРОС_О_БОЛИ: НЕТ\n\nПРИСОЕДИНЕНИЕ: 2\n\nВОЗРАЖЕНИЯ: none\n\nКЦД: ДА (пересчитать смету и уточнить сроки)",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 217,
+      "ttft_ms": 2564,
+      "prefill_tps": 1597.4,
+      "decode_tps": 47.75,
+      "total_wall_ms": 7388,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: 3000 руб/м² (менioned in the conversation)\nПРОСРОЧКА: No specific date mentioned.\nБОЛЬ: High cost and doubts about the quality of the current repair work.\nВОПРОС_О_БОЛИ: Yes, the client expressed concerns about the consequences of the current state of the roof and the emotions associated with",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 156,
+      "ttft_ms": 2577,
+      "prefill_tps": 1589.4,
+      "decode_tps": 43.2,
+      "total_wall_ms": 6480,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: 6000 руб. (менioned in the conversation)\nПРОСРОЧКА: No specific date mentioned.\nБОЛЬ: None explicitly mentioned.\nВОПРОС_О_БОЛИ: Yes, the client mentioned that they have been experiencing leaks for a long time and are worried about the consequences.\nПРИСОЕДИНЕНИЕ: 2 (the client was cooperative",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:16:11.679683Z"
+}

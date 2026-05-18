@@ -1,0 +1,65 @@
+{
+  "model": "nous-hermes2-mixtral",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:32:54.795387Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3872,
+      "output_tokens": 120,
+      "ttft_ms": 5367,
+      "prefill_tps": 721.5,
+      "decode_tps": 71.77,
+      "total_wall_ms": 7241,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт плоской кровли, повреждение рулонной гидроизоляции и вздутие стяжки\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6675,
+      "output_tokens": 111,
+      "ttft_ms": 9407,
+      "prefill_tps": 709.6,
+      "decode_tps": 66.27,
+      "total_wall_ms": 11264,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Интеграция металла с камнем для оформления фасада/дымоходов\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 12924,
+      "output_tokens": 192,
+      "ttft_ms": 19299,
+      "prefill_tps": 669.7,
+      "decode_tps": 56.26,
+      "total_wall_ms": 22949,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Конкурс между кровельными компаниями, недовольство качеством и стоимостью работ первой компании\nВОПРОС_О_БОЛИ: ДА (тест крючком/отвёрткой для проверки адгезии швов)\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: [нет]\nКЦД: ДА (подготовка данных по зданиям, демонстрация диагнос",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 17941,
+      "output_tokens": 113,
+      "ttft_ms": 27766,
+      "prefill_tps": 646.1,
+      "decode_tps": 50.25,
+      "total_wall_ms": 30278,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт кровли (мансардная крыша с натуральной черепицей)\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:34:06.537203Z"
+}

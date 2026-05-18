@@ -1,0 +1,65 @@
+{
+  "model": "mistral-small:24b-instruct-2501-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T10:02:25.966751Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3092,
+      "output_tokens": 97,
+      "ttft_ms": 2856,
+      "prefill_tps": 1082.8,
+      "decode_tps": 41.96,
+      "total_wall_ms": 5985,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: повреждение кровли, регулярные проблемы\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 5099,
+      "output_tokens": 127,
+      "ttft_ms": 4911,
+      "prefill_tps": 1038.3,
+      "decode_tps": 39.7,
+      "total_wall_ms": 9109,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: интеграция металла с камнем\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: функциональность выступов, риск попадания воды в маркизы, нагрев металла возле камина, эстетика сочетания металла с камнем\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 9575,
+      "output_tokens": 121,
+      "ttft_ms": 9748,
+      "prefill_tps": 982.2,
+      "decode_tps": 36.41,
+      "total_wall_ms": 14052,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: сомнения в качестве ремонта, выбор подрядчика, экономическая эффективность\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: сомнения в качестве текущих работ, переплата за услуги, необходимость доказательств эффективности\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 13196,
+      "output_tokens": 107,
+      "ttft_ms": 13871,
+      "prefill_tps": 951.4,
+      "decode_tps": 33.69,
+      "total_wall_ms": 18171,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: протечки в мансарде, повреждение утеплителя и гидроизоляции\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T10:03:13.290401Z"
+}

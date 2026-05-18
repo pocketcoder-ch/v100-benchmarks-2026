@@ -1,0 +1,65 @@
+{
+  "model": "starcoder2:15b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:25:58.996092Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 4402,
+      "output_tokens": 300,
+      "ttft_ms": 3513,
+      "prefill_tps": 1253.0,
+      "decode_tps": 66.16,
+      "total_wall_ms": 8382,
+      "done_reason": "length",
+      "response_preview": "[redacted: model echoed PII from input — see VARIANCE_FINDINGS.md / PII policy]",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 7497,
+      "output_tokens": 2,
+      "ttft_ms": 6216,
+      "prefill_tps": 1206.0,
+      "decode_tps": 117.63,
+      "total_wall_ms": 6385,
+      "done_reason": "stop",
+      "response_preview": "\n\n",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 14579,
+      "output_tokens": 300,
+      "ttft_ms": 13399,
+      "prefill_tps": 1088.1,
+      "decode_tps": 59.27,
+      "total_wall_ms": 18882,
+      "done_reason": "length",
+      "response_preview": "\n\n---\n\nДОЛГ: НЕТ\nПРОСРОЧКА: 10 дней\nБОЛЬ: недовольство качеством работ\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Неудобно, непонятно\nКЦД: ДА\n\n---\n\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: неудовлетворенность качеством работ\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 1\nВОЗРАЖЕНИЯ: Неудобно, непонятно\nКЦД: ДА\n\n---\n",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 16384,
+      "output_tokens": 300,
+      "ttft_ms": 15362,
+      "prefill_tps": 1066.5,
+      "decode_tps": 58.36,
+      "total_wall_ms": 20949,
+      "done_reason": "length",
+      "response_preview": "\n\n\n--- RESPONSE ---\n\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: недовольство качеством работ\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: нет\nКЦД: НЕТ\n\n\n---\n\nКОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель  — выявить боль клиента, диагностировать долг и просрочку, договориться о следу",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:26:53.605749Z"
+}

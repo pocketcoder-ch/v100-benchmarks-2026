@@ -1,0 +1,65 @@
+{
+  "model": "vicuna:13b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:45:28.111907Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3554,
+      "output_tokens": 91,
+      "ttft_ms": 2156,
+      "prefill_tps": 1648.3,
+      "decode_tps": 67.68,
+      "total_wall_ms": 3681,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 0 руб.\nПРОСРОЧКА: НЕТ\nБОЛЬ: не выявлено\nВОПРОС\\_О\\_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕТ\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 131,
+      "ttft_ms": 2499,
+      "prefill_tps": 1639.3,
+      "decode_tps": 40.9,
+      "total_wall_ms": 5898,
+      "done_reason": "stop",
+      "response_preview": "ДОЛЖ: 0\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС\\_О\\_БОЛИ: ДА\nПРИСОЕДИНЕНИЙ: 2\nВАЗРАЖЕНИЯ: обсудить варианты с дизайнерами и прорабом, пересчитать смету и выслать к субботе; клиент - подтвердить удобр",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 147,
+      "ttft_ms": 2501,
+      "prefill_tps": 1638.0,
+      "decode_tps": 42.61,
+      "total_wall_ms": 6184,
+      "done_reason": "stop",
+      "response_preview": "ДОЛЖ: 6000 руб.\nПРОСРОЧКА: 2 месяца.\nБОЛЬ: неясн.\nВОПРОС\\_О\\_БОЛИ: НЕТ.\nПРИСОЕДИНЕНИЙ: 1.\nВОЗРАЖЕНИЯ: дальше обсудить условия и стоимость, согласовать демонстрацию методов диагностики.\nКЦД: договориться о дате выезда для демонстрации диагностики.",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 14,
+      "ttft_ms": 2514,
+      "prefill_tps": 1629.0,
+      "decode_tps": 9.73,
+      "total_wall_ms": 4211,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛЖ: 0\nПРОС",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:45:48.092352Z"
+}

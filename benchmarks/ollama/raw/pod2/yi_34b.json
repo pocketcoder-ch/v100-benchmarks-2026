@@ -1,0 +1,65 @@
+{
+  "model": "yi:34b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T13:46:59.317768Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 4096,
+      "output_tokens": 153,
+      "ttft_ms": 6168,
+      "prefill_tps": 664.1,
+      "decode_tps": 29.13,
+      "total_wall_ms": 11770,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 1\nВОЗРАЖЕНИЯ: [потребность в консультации, оценке состояния кровли; желание получить долговечный решение для эксплуатируемой кровли]\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 135,
+      "ttft_ms": 6178,
+      "prefill_tps": 663.0,
+      "decode_tps": 28.86,
+      "total_wall_ms": 11192,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕ БЫЛ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: [поддержка дизайнеров/прорабом, согласование с материалами и объёмами работ]\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 111,
+      "ttft_ms": 6199,
+      "prefill_tps": 660.7,
+      "decode_tps": 28.38,
+      "total_wall_ms": 10460,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Не выявлена\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 1 (формальное)\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА\n",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 140,
+      "ttft_ms": 6201,
+      "prefill_tps": 660.5,
+      "decode_tps": 28.92,
+      "total_wall_ms": 11479,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: [контакты клиента, гарантия, сроки работ, стоимость работ, демонтаж натуральной черепицы]\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T13:47:44.225987Z"
+}

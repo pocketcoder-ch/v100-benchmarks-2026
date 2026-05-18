@@ -1,0 +1,65 @@
+{
+  "model": "vicuna:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:12:22.838894Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3554,
+      "output_tokens": 97,
+      "ttft_ms": 1215,
+      "prefill_tps": 2924.9,
+      "decode_tps": 114.4,
+      "total_wall_ms": 2227,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: [не было]\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4096,
+      "output_tokens": 99,
+      "ttft_ms": 1392,
+      "prefill_tps": 2943.2,
+      "decode_tps": 58.89,
+      "total_wall_ms": 3248,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 4096,
+      "output_tokens": 98,
+      "ttft_ms": 1390,
+      "prefill_tps": 2947.3,
+      "decode_tps": 58.68,
+      "total_wall_ms": 3264,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 4096,
+      "output_tokens": 99,
+      "ttft_ms": 1392,
+      "prefill_tps": 2942.8,
+      "decode_tps": 58.94,
+      "total_wall_ms": 3279,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:12:34.867258Z"
+}

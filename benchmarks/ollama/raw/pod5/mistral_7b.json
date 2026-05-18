@@ -1,0 +1,65 @@
+{
+  "model": "mistral:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:38:28.816729Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3802,
+      "output_tokens": 107,
+      "ttft_ms": 1359,
+      "prefill_tps": 2796.7,
+      "decode_tps": 96.9,
+      "total_wall_ms": 2679,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: Не указана\nПРОСРОЧКА: НЕТ\nБОЛЬ: Офисное помещение, кровля\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6605,
+      "output_tokens": 130,
+      "ttft_ms": 2430,
+      "prefill_tps": 2718.2,
+      "decode_tps": 86.93,
+      "total_wall_ms": 4124,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: 2025-02-17\nБОЛЬ: не указано\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 3 (сильное)\nВОЗРАЖЕНИЯ: \"свет убирать\", \"обшивка трубы\", \"колпаки сверху\", \"цвет покрытия\"\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 12854,
+      "output_tokens": 106,
+      "ttft_ms": 5321,
+      "prefill_tps": 2415.6,
+      "decode_tps": 70.45,
+      "total_wall_ms": 7019,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: 2025-02-24\nБОЛЬ: старая мембрана кровли\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 1 (формальное)\nВОЗРАЖЕНИЯ: нет\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 17871,
+      "output_tokens": 95,
+      "ttft_ms": 8043,
+      "prefill_tps": 2221.8,
+      "decode_tps": 61.72,
+      "total_wall_ms": 9818,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: не указано\nПРОСРОЧКА: не указано\nБОЛЬ: кровля\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: нет\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:38:52.468592Z"
+}

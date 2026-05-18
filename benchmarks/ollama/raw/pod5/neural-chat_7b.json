@@ -1,0 +1,65 @@
+{
+  "model": "neural-chat:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:58:22.798541Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3815,
+      "output_tokens": 97,
+      "ttft_ms": 1350,
+      "prefill_tps": 2826.8,
+      "decode_tps": 107.55,
+      "total_wall_ms": 2461,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: не указана\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: [нет]\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6618,
+      "output_tokens": 142,
+      "ttft_ms": 2387,
+      "prefill_tps": 2772.5,
+      "decode_tps": 95.14,
+      "total_wall_ms": 4084,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Клиент не уточнил о болевых ощущениях\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 0 (нет)\nВОЗРАЖЕНИЯ: [общие вопросы, обсуждение сметы и объёма работ, согласование с дизайнерами и прорабом]\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 12867,
+      "output_tokens": 300,
+      "ttft_ms": 5218,
+      "prefill_tps": 2466.0,
+      "decode_tps": 75.47,
+      "total_wall_ms": 9504,
+      "done_reason": "length",
+      "response_preview": " по э не я как а по па раз м из хо воз не по по по и о вы во ма по ка что по де по кра по как по по по, е по про по по по по по ми по э по по пре, по по по э по э, по. по хо ко по по по- по, по - я э по э по п а ма не по э по по о во вы воз во по по ка по по по и как то по по по по раз по по по по п",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 17884,
+      "output_tokens": 300,
+      "ttft_ms": 7913,
+      "prefill_tps": 2260.1,
+      "decode_tps": 64.94,
+      "total_wall_ms": 12890,
+      "done_reason": "length",
+      "response_preview": " Question неника questionнь Questionи Questionа Question ану Question выны Questionы Questionну Questionну Questionки questionника Question зань Question по Questionа Questionиныны Questionи Question на с Questionни Questionну Question мо Question отнынынь Question и при Question яныну Question у Qu",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:58:51.747305Z"
+}

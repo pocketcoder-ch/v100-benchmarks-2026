@@ -1,0 +1,65 @@
+{
+  "model": "llama3.2-vision:11b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T13:14:19.410815Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2852,
+      "output_tokens": 81,
+      "ttft_ms": 1000,
+      "prefill_tps": 2850.7,
+      "decode_tps": 93.75,
+      "total_wall_ms": 2474,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4977,
+      "output_tokens": 85,
+      "ttft_ms": 1781,
+      "prefill_tps": 2795.0,
+      "decode_tps": 73.8,
+      "total_wall_ms": 3452,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: камень, металл, стоимость, время\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 9460,
+      "output_tokens": 88,
+      "ttft_ms": 3688,
+      "prefill_tps": 2565.0,
+      "decode_tps": 74.88,
+      "total_wall_ms": 5447,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: подозрительность, сомнения в качестве, цена\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 12920,
+      "output_tokens": 81,
+      "ttft_ms": 5400,
+      "prefill_tps": 2392.4,
+      "decode_tps": 66.84,
+      "total_wall_ms": 7250,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T13:14:38.039509Z"
+}

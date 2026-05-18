@@ -1,0 +1,65 @@
+{
+  "model": "openchat:7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:55:37.840404Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3815,
+      "output_tokens": 121,
+      "ttft_ms": 1341,
+      "prefill_tps": 2844.1,
+      "decode_tps": 107.18,
+      "total_wall_ms": 2684,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: эксплуатируемая кровля с трещинами и вздутиями стяжки\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6618,
+      "output_tokens": 204,
+      "ttft_ms": 2392,
+      "prefill_tps": 2767.0,
+      "decode_tps": 94.82,
+      "total_wall_ms": 4787,
+      "done_reason": "stop",
+      "response_preview": " DOLG: [сумма, если узнал | НЕТ]\nPROSROCHKA: [срок | НЕТ]\nBOL: [главная боль клиента в 3-5 словах | НЕ ВЫЯВЛЕНА]\nVOPROS_O_BOLI: [был ли вопрос про последствия/эмоции: ДА/НЕТ]\nPRISOEDINENIE: [0-3: 0=нет, 1=формальное, 2=хорошее, 3=сильное]\nVOZRASHENIYA: [список через запятую | НЕ БЫЛО]\nKCD: [был ли н",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8192,
+      "output_tokens": 222,
+      "ttft_ms": 3037,
+      "prefill_tps": 2697.8,
+      "decode_tps": 77.43,
+      "total_wall_ms": 6199,
+      "done_reason": "stop",
+      "response_preview": "\n\nДОЛГ: [сумма, если узнал | НЕТ]\nПРОСРОЧКА: [срок | НЕТ]\nБОЛЬ: [главная боль клиента в 3-5 словах | НЕ ВЫЯВЛЕНА]\nВОПРОС_О_БОЛИ: [был ли вопрос про последствия/эмоции: ДА/НЕТ]\nПРИСОЕДИНЕНИЕ: [0-3: 0=нет, 1=формальное, 2=хорошее, 3=сильное]\nВОЗРАЖЕНИЯ: [список через запятую | НЕ БЫЛО]\nКЦД: [был ли на",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 8192,
+      "output_tokens": 145,
+      "ttft_ms": 3044,
+      "prefill_tps": 2691.5,
+      "decode_tps": 72.23,
+      "total_wall_ms": 5329,
+      "done_reason": "stop",
+      "response_preview": "\n\nДОЛГ: 10000 | НЕТ\nПРОСРОЧКА: 3 месяца | НЕТ\nБОЛЬ: недостаток времени для выполнения работы\nВОПРОС_О_БОЛИ: нет\nВОЗРАЖЕНИЯ: нет\nПРИСОЕДИНЕНИЕ: 2\nКЦД: список через запятую | НЕ БЫЛО\nКТО: [сумма, если узнал | НЕТ]",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:55:56.850611Z"
+}

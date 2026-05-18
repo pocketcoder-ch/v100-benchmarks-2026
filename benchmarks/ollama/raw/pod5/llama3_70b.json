@@ -1,0 +1,65 @@
+{
+  "model": "llama3:70b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:26:57.905007Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2850,
+      "output_tokens": 94,
+      "ttft_ms": 6851,
+      "prefill_tps": 416.0,
+      "decode_tps": 17.47,
+      "total_wall_ms": 12780,
+      "done_reason": "stop",
+      "response_preview": "Here is the analysis of the dialogue:\n\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт плоской кровли\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: консультация, оценка состояния кровли, ремонт\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4975,
+      "output_tokens": 110,
+      "ttft_ms": 11665,
+      "prefill_tps": 426.5,
+      "decode_tps": 16.77,
+      "total_wall_ms": 18815,
+      "done_reason": "stop",
+      "response_preview": "Here is the analysis of the dialogue:\n\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Интеграция металла с камнем\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: функциональность выступов, риск попадания воды в маркизы, нагрев металла возле камина\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8192,
+      "output_tokens": 125,
+      "ttft_ms": 19846,
+      "prefill_tps": 412.8,
+      "decode_tps": 14.06,
+      "total_wall_ms": 29506,
+      "done_reason": "stop",
+      "response_preview": "Here is the analysis of the dialogue:\n\nДОЛГ: 2025\nПРОСРОЧКА: НЕТ\nБОЛЬ: Необходимость выбора надёжного подрядчика для долгосрочного обслуживания кровель и принятия решения о ремонте или замене мембраны\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Михаил, Александр/RSK-24\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 8192,
+      "output_tokens": 103,
+      "ttft_ms": 19807,
+      "prefill_tps": 413.6,
+      "decode_tps": 13.7,
+      "total_wall_ms": 28034,
+      "done_reason": "stop",
+      "response_preview": "Here is the analysis of the dialogue:\n\nДОЛГ: 2-3 недели\nПРОСРОЧКА: НЕТ\nБОЛЬ: Протечки в мансарде\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: смета, примеры работ, гарантия, этапная оплата\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:28:27.049555Z"
+}

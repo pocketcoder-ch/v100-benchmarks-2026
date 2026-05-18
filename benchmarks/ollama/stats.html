@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>V100 Ollama Bench — 2026-05-15</title>
+<style>
+body {font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin:24px; background:#fafafa; color:#222}
+h1 {margin:0 0 4px 0}
+.subtitle {color:#666;margin-bottom:24px}
+table {border-collapse:collapse;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.1);width:100%;font-size:13px}
+th {background:#34495e;color:#fff;padding:10px 8px;text-align:left;position:sticky;top:0}
+td {padding:6px 8px;border-bottom:1px solid #eee}
+tr:hover td {filter:brightness(0.95)}
+.legend {margin-top:16px;font-size:12px;color:#666}
+.legend span {display:inline-block;padding:2px 8px;margin:0 2px;border-radius:3px;color:#fff}
+.notes {background:#fff8dc;padding:12px 16px;border-radius:6px;margin-top:20px;font-size:13px}
+</style>
+</head>
+<body>
+<h1>V100 Ollama Bench</h1>
+<div class="subtitle">2× V100 32GB NVLink / Vast.ai · 2026-05-15 · BVM transcripts (3.5K→18K tok) + eval prompt · num_ctx=22000</div>
+
+<table>
+<thead><tr>
+<th>Model</th><th>Params</th><th>Bucket</th><th>Pod</th>
+<th>short<br>~3K tok</th><th>small<br>~5K tok</th><th>medium<br>~10K tok</th><th>large<br>~14K tok</th>
+<th>Avg<br>decode tps</th>
+<th>TTFT short<br>ms</th><th>TTFT large<br>ms</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="font-family:monospace;font-size:13px">qwen3:0.6b-q4_K_M</td>
+<td style="text-align:right">0.6B</td>
+<td><5B</td>
+<td>pod4</td>
+<td style="background:#1a9850;color:#fff;text-align:right">204.8</td><td style="background:#1a9850;color:#fff;text-align:right">195.5</td><td style="background:#1a9850;color:#fff;text-align:right">177.3</td><td style="background:#1a9850;color:#fff;text-align:right">184.4</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">190.5</td>
+<td style="text-align:right;color:#666">252</td>
+<td style="text-align:right;color:#666">1666</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">llama3.2:1b-instruct-q4_K_M</td>
+<td style="text-align:right">1.0B</td>
+<td><5B</td>
+<td>pod5</td>
+<td style="background:#1a9850;color:#fff;text-align:right">352.5</td><td style="background:#1a9850;color:#fff;text-align:right">322.5</td><td style="background:#1a9850;color:#fff;text-align:right">274.6</td><td style="background:#1a9850;color:#fff;text-align:right">249.0</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">299.6</td>
+<td style="text-align:right;color:#666">227</td>
+<td style="text-align:right;color:#666">1315</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen3:1.7b-q4_K_M</td>
+<td style="text-align:right">1.7B</td>
+<td><5B</td>
+<td>pod4</td>
+<td style="background:#1a9850;color:#fff;text-align:right">163.7</td><td style="background:#1a9850;color:#fff;text-align:right">182.2</td><td style="background:#1a9850;color:#fff;text-align:right">163.2</td><td style="background:#1a9850;color:#fff;text-align:right">156.5</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">166.4</td>
+<td style="text-align:right;color:#666">421</td>
+<td style="text-align:right;color:#666">2210</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">llama3.2:3b-instruct-q4_K_M</td>
+<td style="text-align:right">3.0B</td>
+<td><5B</td>
+<td>pod5</td>
+<td style="background:#1a9850;color:#fff;text-align:right">180.6</td><td style="background:#1a9850;color:#fff;text-align:right">167.3</td><td style="background:#1a9850;color:#fff;text-align:right">147.0</td><td style="background:#1a9850;color:#fff;text-align:right">134.4</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">157.3</td>
+<td style="text-align:right;color:#666">576</td>
+<td style="text-align:right;color:#666">3194</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">phi3:3.8b-mini-128k-instruct-q4_K_M</td>
+<td style="text-align:right">3.8B</td>
+<td><5B</td>
+<td>pod5</td>
+<td style="background:#66bd63;color:#fff;text-align:right">93.8</td><td style="background:#66bd63;color:#fff;text-align:right">71.4</td><td style="background:#a6d96a;color:#000;text-align:right">46.8</td><td style="background:#fee08b;color:#000;text-align:right">36.7</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">62.2</td>
+<td style="text-align:right;color:#666">826</td>
+<td style="text-align:right;color:#666">5345</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">nemotron-mini:4b-instruct-q4_K_M</td>
+<td style="text-align:right">4.0B</td>
+<td><5B</td>
+<td>pod5</td>
+<td style="background:#1a9850;color:#fff;text-align:right">153.1</td><td style="background:#66bd63;color:#fff;text-align:right">97.8</td><td style="background:#f46d43;color:#000;text-align:right">13.7</td><td style="background:#1a9850;color:#fff;text-align:right">113.7</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">94.6</td>
+<td style="text-align:right;color:#666">532</td>
+<td style="text-align:right;color:#666">786</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen3:4b-q4_K_M</td>
+<td style="text-align:right">4.0B</td>
+<td><5B</td>
+<td>pod4</td>
+<td style="background:#66bd63;color:#fff;text-align:right">97.5</td><td style="background:#66bd63;color:#fff;text-align:right">92.8</td><td style="background:#66bd63;color:#fff;text-align:right">78.4</td><td style="background:#66bd63;color:#fff;text-align:right">69.0</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">84.4</td>
+<td style="text-align:right;color:#666">907</td>
+<td style="text-align:right;color:#666">4905</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">mistral:7b-instruct-v0.3-q4_K_M</td>
+<td style="text-align:right">7.0B</td>
+<td>5-9B</td>
+<td>pod5</td>
+<td style="background:#66bd63;color:#fff;text-align:right">98.0</td><td style="background:#66bd63;color:#fff;text-align:right">87.2</td><td style="background:#66bd63;color:#fff;text-align:right">71.1</td><td style="background:#66bd63;color:#fff;text-align:right">61.9</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">79.6</td>
+<td style="text-align:right;color:#666">809</td>
+<td style="text-align:right;color:#666">4466</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5-coder:7b-instruct-q4_K_M</td>
+<td style="text-align:right">7.0B</td>
+<td>5-9B</td>
+<td>pod3</td>
+<td style="background:#1a9850;color:#fff;text-align:right">113.4</td><td style="background:#1a9850;color:#fff;text-align:right">108.0</td><td style="background:#66bd63;color:#fff;text-align:right">98.7</td><td style="background:#66bd63;color:#fff;text-align:right">92.5</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">103.2</td>
+<td style="text-align:right;color:#666">1281</td>
+<td style="text-align:right;color:#666">5664</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5:7b-instruct-q4_K_M</td>
+<td style="text-align:right">7.0B</td>
+<td>5-9B</td>
+<td>pod4</td>
+<td style="background:#1a9850;color:#fff;text-align:right">113.2</td><td style="background:#1a9850;color:#fff;text-align:right">109.1</td><td style="background:#66bd63;color:#fff;text-align:right">97.3</td><td style="background:#66bd63;color:#fff;text-align:right">91.4</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">102.8</td>
+<td style="text-align:right;color:#666">1100</td>
+<td style="text-align:right;color:#666">5530</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">deepseek-r1:8b-q4_K_M</td>
+<td style="text-align:right">8.0B</td>
+<td>5-9B</td>
+<td>pod3</td>
+<td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td>
+<td style="background:#eee;color:#000;text-align:right;font-weight:bold">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td><span style="color:#d73027;font-weight:bold">FAIL</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">granite3.1-dense:8b-instruct-q4_K_M</td>
+<td style="text-align:right">8.0B</td>
+<td>5-9B</td>
+<td>pod5</td>
+<td style="background:#66bd63;color:#fff;text-align:right">78.5</td><td style="background:#66bd63;color:#fff;text-align:right">69.9</td><td style="background:#a6d96a;color:#000;text-align:right">55.4</td><td style="background:#a6d96a;color:#000;text-align:right">47.7</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">62.9</td>
+<td style="text-align:right;color:#666">1864</td>
+<td style="text-align:right;color:#666">11288</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">llama3.1:8b-instruct-q4_K_M</td>
+<td style="text-align:right">8.0B</td>
+<td>5-9B</td>
+<td>pod5</td>
+<td style="background:#66bd63;color:#fff;text-align:right">98.1</td><td style="background:#66bd63;color:#fff;text-align:right">88.6</td><td style="background:#66bd63;color:#fff;text-align:right">76.1</td><td style="background:#66bd63;color:#fff;text-align:right">68.7</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">82.9</td>
+<td style="text-align:right;color:#666">657</td>
+<td style="text-align:right;color:#666">3160</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen3:8b-q4_K_M</td>
+<td style="text-align:right">8.0B</td>
+<td>5-9B</td>
+<td>pod4</td>
+<td style="background:#66bd63;color:#fff;text-align:right">78.3</td><td style="background:#66bd63;color:#fff;text-align:right">76.7</td><td style="background:#66bd63;color:#fff;text-align:right">63.9</td><td style="background:#a6d96a;color:#000;text-align:right">58.7</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">69.4</td>
+<td style="text-align:right;color:#666">1263</td>
+<td style="text-align:right;color:#666">6485</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">gemma2:9b-instruct-q4_K_M</td>
+<td style="text-align:right">9.0B</td>
+<td>5-9B</td>
+<td>pod2</td>
+<td style="background:#66bd63;color:#fff;text-align:right">73.8</td><td style="background:#66bd63;color:#fff;text-align:right">69.2</td><td style="background:#66bd63;color:#fff;text-align:right">61.6</td><td style="background:#66bd63;color:#fff;text-align:right">60.2</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">66.2</td>
+<td style="text-align:right;color:#666">1403</td>
+<td style="text-align:right;color:#666">4542</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">mistral-nemo:12b-instruct-2407-q4_K_M</td>
+<td style="text-align:right">12.0B</td>
+<td>10-19B</td>
+<td>pod5</td>
+<td style="background:#66bd63;color:#fff;text-align:right">68.7</td><td style="background:#66bd63;color:#fff;text-align:right">62.8</td><td style="background:#a6d96a;color:#000;text-align:right">54.4</td><td style="background:#a6d96a;color:#000;text-align:right">49.8</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">58.9</td>
+<td style="text-align:right;color:#666">1566</td>
+<td style="text-align:right;color:#666">8152</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">deepseek-r1:14b-q4_K_M</td>
+<td style="text-align:right">14.0B</td>
+<td>10-19B</td>
+<td>pod3</td>
+<td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td>
+<td style="background:#eee;color:#000;text-align:right;font-weight:bold">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td><span style="color:#d73027;font-weight:bold">FAIL</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">phi3:14b-medium-128k-instruct-q4_K_M</td>
+<td style="text-align:right">14.0B</td>
+<td>10-19B</td>
+<td>pod5</td>
+<td style="background:#a6d96a;color:#000;text-align:right">59.9</td><td style="background:#a6d96a;color:#000;text-align:right">54.3</td><td style="background:#a6d96a;color:#000;text-align:right">45.4</td><td style="background:#a6d96a;color:#000;text-align:right">40.1</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">49.9</td>
+<td style="text-align:right;color:#666">2255</td>
+<td style="text-align:right;color:#666">12631</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">phi4:14b-q4_K_M</td>
+<td style="text-align:right">14.0B</td>
+<td>10-19B</td>
+<td>pod2</td>
+<td style="background:#a6d96a;color:#000;text-align:right">57.7</td><td style="background:#a6d96a;color:#000;text-align:right">51.4</td><td style="background:#a6d96a;color:#000;text-align:right">42.2</td><td style="background:#fee08b;color:#000;text-align:right">27.9</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">44.8</td>
+<td style="text-align:right;color:#666">1570</td>
+<td style="text-align:right;color:#666">7216</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5-coder:14b-instruct-q4_K_M</td>
+<td style="text-align:right">14.0B</td>
+<td>10-19B</td>
+<td>pod3</td>
+<td style="background:#a6d96a;color:#000;text-align:right">59.0</td><td style="background:#a6d96a;color:#000;text-align:right">55.4</td><td style="background:#a6d96a;color:#000;text-align:right">49.5</td><td style="background:#a6d96a;color:#000;text-align:right">45.9</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">52.5</td>
+<td style="text-align:right;color:#666">2214</td>
+<td style="text-align:right;color:#666">11225</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5:14b-instruct-q4_K_M</td>
+<td style="text-align:right">14.0B</td>
+<td>10-19B</td>
+<td>pod4</td>
+<td style="background:#a6d96a;color:#000;text-align:right">59.5</td><td style="background:#a6d96a;color:#000;text-align:right">56.1</td><td style="background:#a6d96a;color:#000;text-align:right">49.9</td><td style="background:#a6d96a;color:#000;text-align:right">45.9</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">52.9</td>
+<td style="text-align:right;color:#666">2153</td>
+<td style="text-align:right;color:#666">10983</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen3:14b-q4_K_M</td>
+<td style="text-align:right">14.0B</td>
+<td>10-19B</td>
+<td>pod4</td>
+<td style="background:#a6d96a;color:#000;text-align:right">57.2</td><td style="background:#a6d96a;color:#000;text-align:right">55.5</td><td style="background:#a6d96a;color:#000;text-align:right">50.0</td><td style="background:#a6d96a;color:#000;text-align:right">46.6</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">52.3</td>
+<td style="text-align:right;color:#666">2236</td>
+<td style="text-align:right;color:#666">10745</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">deepseek-coder-v2:16b-lite-instruct-q4_K_M</td>
+<td style="text-align:right">16.0B</td>
+<td>10-19B</td>
+<td>pod3</td>
+<td style="background:#66bd63;color:#fff;text-align:right">80.2</td><td style="background:#a6d96a;color:#000;text-align:right">56.7</td><td style="background:#fee08b;color:#000;text-align:right">33.0</td><td style="background:#fee08b;color:#000;text-align:right">25.2</td>
+<td style="background:#a6d96a;color:#000;text-align:right;font-weight:bold">48.8</td>
+<td style="text-align:right;color:#666">2742</td>
+<td style="text-align:right;color:#666">16088</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">gpt-oss:20b</td>
+<td style="text-align:right">20.0B</td>
+<td>20-29B</td>
+<td>pod4</td>
+<td style="background:#1a9850;color:#fff;text-align:right">110.8</td><td style="background:#1a9850;color:#fff;text-align:right">107.9</td><td style="background:#1a9850;color:#fff;text-align:right">105.3</td><td style="background:#1a9850;color:#fff;text-align:right">103.1</td>
+<td style="background:#1a9850;color:#fff;text-align:right;font-weight:bold">106.8</td>
+<td style="text-align:right;color:#666">1630</td>
+<td style="text-align:right;color:#666">7703</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">codestral:22b-v0.1-q4_K_M</td>
+<td style="text-align:right">22.0B</td>
+<td>20-29B</td>
+<td>pod3</td>
+<td style="background:#a6d96a;color:#000;text-align:right">41.0</td><td style="background:#fee08b;color:#000;text-align:right">38.3</td><td style="background:#fee08b;color:#000;text-align:right">33.1</td><td style="background:#fee08b;color:#000;text-align:right">30.1</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">35.6</td>
+<td style="text-align:right;color:#666">4202</td>
+<td style="text-align:right;color:#666">24187</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">mistral-small:24b-instruct-2501-q4_K_M</td>
+<td style="text-align:right">24.0B</td>
+<td>20-29B</td>
+<td>pod2</td>
+<td style="background:#a6d96a;color:#000;text-align:right">42.0</td><td style="background:#fee08b;color:#000;text-align:right">39.7</td><td style="background:#fee08b;color:#000;text-align:right">36.4</td><td style="background:#fee08b;color:#000;text-align:right">33.7</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">37.9</td>
+<td style="text-align:right;color:#666">2856</td>
+<td style="text-align:right;color:#666">13871</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">gemma2:27b-instruct-q4_K_M</td>
+<td style="text-align:right">27.0B</td>
+<td>20-29B</td>
+<td>pod2</td>
+<td style="background:#fee08b;color:#000;text-align:right">35.0</td><td style="background:#fee08b;color:#000;text-align:right">33.8</td><td style="background:#fee08b;color:#000;text-align:right">31.0</td><td style="background:#fee08b;color:#000;text-align:right">31.1</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">32.8</td>
+<td style="text-align:right;color:#666">3468</td>
+<td style="text-align:right;color:#666">11775</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">aya-expanse:32b-q4_K_M</td>
+<td style="text-align:right">32.0B</td>
+<td>30-49B</td>
+<td>pod5</td>
+<td style="background:#fee08b;color:#000;text-align:right">32.5</td><td style="background:#fee08b;color:#000;text-align:right">31.2</td><td style="background:#fee08b;color:#000;text-align:right">25.3</td><td style="background:#fee08b;color:#000;text-align:right">25.6</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">28.7</td>
+<td style="text-align:right;color:#666">3743</td>
+<td style="text-align:right;color:#666">11606</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">deepseek-r1:32b-q4_K_M</td>
+<td style="text-align:right">32.0B</td>
+<td>30-49B</td>
+<td>pod3</td>
+<td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td>
+<td style="background:#eee;color:#000;text-align:right;font-weight:bold">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td><span style="color:#d73027;font-weight:bold">FAIL</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5-coder:32b-instruct-q4_K_M</td>
+<td style="text-align:right">32.0B</td>
+<td>30-49B</td>
+<td>pod3</td>
+<td style="background:#fee08b;color:#000;text-align:right">29.9</td><td style="background:#fee08b;color:#000;text-align:right">28.6</td><td style="background:#fee08b;color:#000;text-align:right">26.5</td><td style="background:#fee08b;color:#000;text-align:right">25.1</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">27.5</td>
+<td style="text-align:right;color:#666">4829</td>
+<td style="text-align:right;color:#666">23054</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5:32b-instruct-q4_K_M</td>
+<td style="text-align:right">32.0B</td>
+<td>30-49B</td>
+<td>pod1</td>
+<td style="background:#fee08b;color:#000;text-align:right">30.1</td><td style="background:#fee08b;color:#000;text-align:right">28.9</td><td style="background:#fee08b;color:#000;text-align:right">26.4</td><td style="background:#fdae61;color:#000;text-align:right">24.8</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">27.5</td>
+<td style="text-align:right;color:#666">4715</td>
+<td style="text-align:right;color:#666">22681</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen3:32b-q4_K_M</td>
+<td style="text-align:right">32.0B</td>
+<td>30-49B</td>
+<td>pod2</td>
+<td style="background:#fee08b;color:#000;text-align:right">27.3</td><td style="background:#fee08b;color:#000;text-align:right">26.2</td><td style="background:#fdae61;color:#000;text-align:right">23.7</td><td style="background:#fdae61;color:#000;text-align:right">22.0</td>
+<td style="background:#fdae61;color:#000;text-align:right;font-weight:bold">24.8</td>
+<td style="text-align:right;color:#666">5162</td>
+<td style="text-align:right;color:#666">26040</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwq:32b-preview-q4_K_M</td>
+<td style="text-align:right">32.0B</td>
+<td>30-49B</td>
+<td>pod2</td>
+<td style="background:#fee08b;color:#000;text-align:right">30.2</td><td style="background:#fee08b;color:#000;text-align:right">29.1</td><td style="background:#fee08b;color:#000;text-align:right">26.5</td><td style="background:#fdae61;color:#000;text-align:right">24.9</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">27.7</td>
+<td style="text-align:right;color:#666">4679</td>
+<td style="text-align:right;color:#666">22382</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">command-r:35b-08-2024-q4_K_M</td>
+<td style="text-align:right">35.0B</td>
+<td>30-49B</td>
+<td>pod5</td>
+<td style="background:#fee08b;color:#000;text-align:right">32.5</td><td style="background:#fee08b;color:#000;text-align:right">31.2</td><td style="background:#fee08b;color:#000;text-align:right">29.3</td><td style="background:#fee08b;color:#000;text-align:right">27.9</td>
+<td style="background:#fee08b;color:#000;text-align:right;font-weight:bold">30.2</td>
+<td style="text-align:right;color:#666">3751</td>
+<td style="text-align:right;color:#666">17937</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">deepseek-r1:70b-llama-distill-q4_K_M</td>
+<td style="text-align:right">70.0B</td>
+<td>50-79B</td>
+<td>pod1</td>
+<td style="background:#fdae61;color:#000;text-align:right">15.6</td><td style="background:#fdae61;color:#000;text-align:right">15.0</td><td style="background:#f46d43;color:#000;text-align:right">14.0</td><td style="background:#f46d43;color:#000;text-align:right">13.3</td>
+<td style="background:#f46d43;color:#000;text-align:right;font-weight:bold">14.5</td>
+<td style="text-align:right;color:#666">6752</td>
+<td style="text-align:right;color:#666">32197</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">llama3.3:70b-instruct-q4_K_M</td>
+<td style="text-align:right">70.0B</td>
+<td>50-79B</td>
+<td>pod1</td>
+<td style="background:#fdae61;color:#000;text-align:right">15.8</td><td style="background:#fdae61;color:#000;text-align:right">15.2</td><td style="background:#f46d43;color:#000;text-align:right">14.1</td><td style="background:#f46d43;color:#000;text-align:right">13.5</td>
+<td style="background:#f46d43;color:#000;text-align:right;font-weight:bold">14.6</td>
+<td style="text-align:right;color:#666">6719</td>
+<td style="text-align:right;color:#666">32106</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">qwen2.5:72b-instruct-q4_K_M</td>
+<td style="text-align:right">72.0B</td>
+<td>50-79B</td>
+<td>pod1</td>
+<td style="background:#f46d43;color:#000;text-align:right">14.7</td><td style="background:#f46d43;color:#000;text-align:right">14.2</td><td style="background:#f46d43;color:#000;text-align:right">13.2</td><td style="background:#f46d43;color:#000;text-align:right">12.5</td>
+<td style="background:#f46d43;color:#000;text-align:right;font-weight:bold">13.7</td>
+<td style="text-align:right;color:#666">7565</td>
+<td style="text-align:right;color:#666">36082</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">command-r-plus:104b-q4_K_S</td>
+<td style="text-align:right">104.0B</td>
+<td>80B+</td>
+<td>pod1</td>
+<td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td><td style="background:#eee;color:#000;text-align:right">—</td>
+<td style="background:#eee;color:#000;text-align:right;font-weight:bold">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td style="text-align:right;color:#666">—</td>
+<td><span style="color:#d73027;font-weight:bold">FAIL</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">gpt-oss:120b</td>
+<td style="text-align:right">120.0B</td>
+<td>80B+</td>
+<td>pod1</td>
+<td style="background:#66bd63;color:#fff;text-align:right">76.4</td><td style="background:#66bd63;color:#fff;text-align:right">74.8</td><td style="background:#66bd63;color:#fff;text-align:right">72.8</td><td style="background:#eee;color:#000;text-align:right">—</td>
+<td style="background:#66bd63;color:#fff;text-align:right;font-weight:bold">74.7</td>
+<td style="text-align:right;color:#666">3569</td>
+<td style="text-align:right;color:#666">—</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr><tr>
+<td style="font-family:monospace;font-size:13px">mistral-large:123b-instruct-2407-q3_K_M</td>
+<td style="text-align:right">123.0B</td>
+<td>80B+</td>
+<td>pod1</td>
+<td style="background:#d73027;color:#000;text-align:right">3.0</td><td style="background:#d73027;color:#000;text-align:right">2.6</td><td style="background:#d73027;color:#000;text-align:right">1.7</td><td style="background:#eee;color:#000;text-align:right">—</td>
+<td style="background:#d73027;color:#000;text-align:right;font-weight:bold">2.4</td>
+<td style="text-align:right;color:#666">36276</td>
+<td style="text-align:right;color:#666">—</td>
+<td><span style="color:#1a9850">OK</span></td>
+</tr>
+</tbody>
+</table>
+
+<div class="legend">
+<b>Decode tps colour:</b>
+<span style="background:#1a9850">≥100</span>
+<span style="background:#66bd63">60-99</span>
+<span style="background:#a6d96a;color:#000">40-59</span>
+<span style="background:#fee08b;color:#000">25-39</span>
+<span style="background:#fdae61;color:#000">15-24</span>
+<span style="background:#f46d43">5-14</span>
+<span style="background:#d73027">&lt;5</span>
+</div>
+
+<div class="notes">
+<b>Условия теста:</b> Ollama / Q4_K_M / single-stream / OLLAMA_NUM_PARALLEL=1 / OLLAMA_FLASH_ATTENTION=1 / OLLAMA_KV_CACHE_TYPE=q8_0 / num_predict=300 / temperature=0.<br>
+<b>Pod topology:</b> pod1=NV1, pod2=SYS(PCIe), pod3/pod4/pod5=NV2(NVLink). 70B+ запускаются TP=2 NVLink.<br>
+<b>Корпус:</b> реальные транскрипции звонков колл-центра, 3.5/6/12.5/18K токенов на 4 уровня. Eval prompt — диагностика боли клиента (~250 tok).<br>
+<b>FAIL причина:</b> неверные Ollama тэги (deepseek-r1:Xb-q4_K_M вместо deepseek-r1:Xb; command-r-plus:104b-q4_K_S вместо command-r-plus:104b). Будут перепрогнаны.
+</div>
+</body>
+</html>

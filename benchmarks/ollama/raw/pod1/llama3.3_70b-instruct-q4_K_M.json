@@ -1,0 +1,65 @@
+{
+  "model": "llama3.3:70b-instruct-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:59:41.597598Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2850,
+      "output_tokens": 77,
+      "ttft_ms": 6719,
+      "prefill_tps": 424.2,
+      "decode_tps": 15.77,
+      "total_wall_ms": 12196,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4975,
+      "output_tokens": 111,
+      "ttft_ms": 11445,
+      "prefill_tps": 434.7,
+      "decode_tps": 15.16,
+      "total_wall_ms": 19434,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Обшивка фасада\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: функциональность выступов, риск попадания воды в маркизы, нагрев металла возле камина, эстетика сочетания металла с камнем\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 9458,
+      "output_tokens": 84,
+      "ttft_ms": 22588,
+      "prefill_tps": 418.7,
+      "decode_tps": 14.14,
+      "total_wall_ms": 29182,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: цена, качество работ, выбор подрядчика\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 12918,
+      "output_tokens": 85,
+      "ttft_ms": 32106,
+      "prefill_tps": 402.4,
+      "decode_tps": 13.49,
+      "total_wall_ms": 39093,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Протечки крыши\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Стоимость, сроки, гарантия, оплата\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T10:01:21.509250Z"
+}

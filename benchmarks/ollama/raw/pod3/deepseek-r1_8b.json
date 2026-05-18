@@ -1,0 +1,65 @@
+{
+  "model": "deepseek-r1:8b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T10:48:32.768247Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3139,
+      "output_tokens": 300,
+      "ttft_ms": 1229,
+      "prefill_tps": 2554.4,
+      "decode_tps": 90.7,
+      "total_wall_ms": 5068,
+      "done_reason": "length",
+      "response_preview": "",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 5396,
+      "output_tokens": 300,
+      "ttft_ms": 2080,
+      "prefill_tps": 2593.9,
+      "decode_tps": 90.32,
+      "total_wall_ms": 5884,
+      "done_reason": "length",
+      "response_preview": "",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 10185,
+      "output_tokens": 300,
+      "ttft_ms": 4292,
+      "prefill_tps": 2373.0,
+      "decode_tps": 84.5,
+      "total_wall_ms": 8346,
+      "done_reason": "length",
+      "response_preview": "",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 14021,
+      "output_tokens": 300,
+      "ttft_ms": 6358,
+      "prefill_tps": 2205.2,
+      "decode_tps": 79.96,
+      "total_wall_ms": 10640,
+      "done_reason": "length",
+      "response_preview": "",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T10:49:02.717343Z"
+}

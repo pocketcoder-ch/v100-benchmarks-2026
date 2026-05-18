@@ -1,0 +1,65 @@
+{
+  "model": "llama3.2:1b-instruct-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:50:10.990039Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2865,
+      "output_tokens": 300,
+      "ttft_ms": 227,
+      "prefill_tps": 12625.4,
+      "decode_tps": 352.49,
+      "total_wall_ms": 1925,
+      "done_reason": "length",
+      "response_preview": "Сумма долга клиента составляет 105664 доллара США.\n\nСроки консультации и оценки составляют 172 секунды (2 минуты).\n\nГлавная боль клиента — это не выраженная, но потенциальная проблема с эксплуатируемой кровлей в центре Москвы.\n\nВопрос о последствиях/эмоции: нет.\n\nНазначенный следующий шаг: не опреде",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4990,
+      "output_tokens": 300,
+      "ttft_ms": 508,
+      "prefill_tps": 9831.1,
+      "decode_tps": 322.53,
+      "total_wall_ms": 2303,
+      "done_reason": "length",
+      "response_preview": "[redacted: model echoed PII from input — see VARIANCE_FINDINGS.md / PII policy]",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 9473,
+      "output_tokens": 300,
+      "ttft_ms": 860,
+      "prefill_tps": 11020.9,
+      "decode_tps": 274.58,
+      "total_wall_ms": 2771,
+      "done_reason": "length",
+      "response_preview": "Этот вопрос требует от меня проанализировать и перевести диалог между клиентом и подрядчиком, чтобы определить основные проблемы и цели. Это также включает в себя определение ключевых понятий, таких как долгосрочная работа, диагностика, экономическая эффективность и прозрачность.\n\nВ частности, мы мо",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 12933,
+      "output_tokens": 300,
+      "ttft_ms": 1315,
+      "prefill_tps": 9834.8,
+      "decode_tps": 248.96,
+      "total_wall_ms": 3428,
+      "done_reason": "length",
+      "response_preview": "Этот вопрос требует от меня проанализировать и перевести диалог между клиентом и представителем по ремонту кровли на коттедже в Новой Риге. Вопрос касается вопросов о стоимости замeras, duration, stages, segments length, transcript length, etc.\n\nВсего 10 вопросов, которые можно разделить на 3 группы",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:50:21.428027Z"
+}

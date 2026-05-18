@@ -1,0 +1,65 @@
+{
+  "model": "mistral-nemo:12b-instruct-2407-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:51:55.821024Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2934,
+      "output_tokens": 96,
+      "ttft_ms": 1566,
+      "prefill_tps": 1873.9,
+      "decode_tps": 68.7,
+      "total_wall_ms": 3499,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт плоской кровли\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4941,
+      "output_tokens": 177,
+      "ttft_ms": 2730,
+      "prefill_tps": 1809.8,
+      "decode_tps": 62.82,
+      "total_wall_ms": 6262,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Несоответствие расчёта и объёма работ\nВОПРОС_О_БОЛИ: ДА (\"Как это будет выглядеть?\", \"Не получится ли некрасиво?\")\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: Функциональность выступов/свесов, риск попадания воды в маркизы, нагрев металла возле камина и эстетика сочетания м",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 9417,
+      "output_tokens": 110,
+      "ttft_ms": 5593,
+      "prefill_tps": 1683.6,
+      "decode_tps": 54.44,
+      "total_wall_ms": 8306,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Недовольство качеством и ценой услуг текущего подрядчика по ремонту кровли\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 13038,
+      "output_tokens": 120,
+      "ttft_ms": 8152,
+      "prefill_tps": 1599.3,
+      "decode_tps": 49.78,
+      "total_wall_ms": 11326,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Течь кровли\nВОПРОС_О_БОЛИ: ДА (вопрос про последствия протечки)\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: НЕТ\nКЦД: ДА (назначен выезд инженера для замера и составления сметы)",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:52:25.224396Z"
+}

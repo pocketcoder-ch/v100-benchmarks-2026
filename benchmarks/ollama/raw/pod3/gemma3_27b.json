@@ -1,0 +1,65 @@
+{
+  "model": "gemma3:27b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:04:40.439979Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2580,
+      "output_tokens": 83,
+      "ttft_ms": 3121,
+      "prefill_tps": 826.6,
+      "decode_tps": 33.36,
+      "total_wall_ms": 6224,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Поврежденная кровля, вздутие стяжки\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Неуверенность в жидкой резине\nКЦД: НЕТ\n",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4489,
+      "output_tokens": 84,
+      "ttft_ms": 5520,
+      "prefill_tps": 813.2,
+      "decode_tps": 33.04,
+      "total_wall_ms": 8690,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Эстетика, функциональность, согласование проекта\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Неполный расчет, несоответствие ожиданиям, стоимость материалов\nКЦД: ДА\n",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8417,
+      "output_tokens": 80,
+      "ttft_ms": 10371,
+      "prefill_tps": 811.6,
+      "decode_tps": 32.65,
+      "total_wall_ms": 13410,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Изношенная кровля, поиск подрядчика\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Цена, качество, сомнения в диагнозе\nКЦД: ДА\n",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 11586,
+      "output_tokens": 77,
+      "ttft_ms": 14269,
+      "prefill_tps": 812.0,
+      "decode_tps": 32.21,
+      "total_wall_ms": 17334,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Протекающая кровля, требует ремонта\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Цена, гарантия, надежность подрядчика\nКЦД: ДА\n",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:05:26.109404Z"
+}

@@ -1,0 +1,65 @@
+{
+  "model": "wizardcoder:33b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:10:13.655580Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 4511,
+      "output_tokens": 131,
+      "ttft_ms": 7112,
+      "prefill_tps": 634.2,
+      "decode_tps": 30.5,
+      "total_wall_ms": 11631,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: ремонт плоской кровли, консультация по современным технологиям гидроизоляции\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: радость, спокойствие, уверенность\nКЦД: НЕТ ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 7759,
+      "output_tokens": 97,
+      "ttft_ms": 12578,
+      "prefill_tps": 616.9,
+      "decode_tps": 28.05,
+      "total_wall_ms": 16250,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: нет боли клиента\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 0\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 15190,
+      "output_tokens": 106,
+      "ttft_ms": 27326,
+      "prefill_tps": 555.9,
+      "decode_tps": 23.41,
+      "total_wall_ms": 32117,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: ремонт кровли\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: радость, уверенность, оптимизм\nКЦД: НЕТ ",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 16384,
+      "output_tokens": 112,
+      "ttft_ms": 29824,
+      "prefill_tps": 549.3,
+      "decode_tps": 17.35,
+      "total_wall_ms": 36623,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: проблема с мансардой крыши\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 3\nВОЗРАЖЕНИЯ: растерянность, тревога, раздражение\nКЦД: НЕТ",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:11:50.286638Z"
+}

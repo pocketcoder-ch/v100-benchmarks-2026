@@ -1,0 +1,65 @@
+{
+  "model": "gemma3:12b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:00:44.054282Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2580,
+      "output_tokens": 73,
+      "ttft_ms": 1524,
+      "prefill_tps": 1692.6,
+      "decode_tps": 63.72,
+      "total_wall_ms": 3254,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Повреждения кровли, регулярные ремонты\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4489,
+      "output_tokens": 88,
+      "ttft_ms": 2625,
+      "prefill_tps": 1710.0,
+      "decode_tps": 61.93,
+      "total_wall_ms": 4626,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Уточнение проекта, согласование дизайна, стоимость\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: функциональность выступов, риск попадания воды, нагрев металла, эстетика сочетания\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8417,
+      "output_tokens": 76,
+      "ttft_ms": 5019,
+      "prefill_tps": 1677.2,
+      "decode_tps": 61.31,
+      "total_wall_ms": 6855,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Неопределенность, сомнения в качестве, цена\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Цена, качество, эффективность ремонта\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 11586,
+      "output_tokens": 83,
+      "ttft_ms": 7186,
+      "prefill_tps": 1612.4,
+      "decode_tps": 60.5,
+      "total_wall_ms": 9233,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Протечки кровли, мансардная крыша\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: стоимость выезда, прозрачность сметы, гарантия\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:01:08.032390Z"
+}

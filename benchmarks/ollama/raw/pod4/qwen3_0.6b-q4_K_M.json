@@ -1,0 +1,65 @@
+{
+  "model": "qwen3:0.6b-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:52:51.013681Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3147,
+      "output_tokens": 176,
+      "ttft_ms": 252,
+      "prefill_tps": 12487.8,
+      "decode_tps": 204.83,
+      "total_wall_ms": 1742,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ  \nПРОСРОЧКА: НЕТ  \nБОЛЬ: НЕ ВЫЯВЛЕНА  \nВОПРОС_О_БОЛИ: НЕТ  \nПРИСОЕДИНЕНИЕ: 0  \nВОЗРАЖЕНИЯ: НЕ БЫЛО  \nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 5404,
+      "output_tokens": 300,
+      "ttft_ms": 403,
+      "prefill_tps": 13397.1,
+      "decode_tps": 195.48,
+      "total_wall_ms": 2611,
+      "done_reason": "length",
+      "response_preview": "",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 10193,
+      "output_tokens": 300,
+      "ttft_ms": 970,
+      "prefill_tps": 10512.1,
+      "decode_tps": 177.28,
+      "total_wall_ms": 3319,
+      "done_reason": "length",
+      "response_preview": "",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 14029,
+      "output_tokens": 174,
+      "ttft_ms": 1666,
+      "prefill_tps": 8419.6,
+      "decode_tps": 184.36,
+      "total_wall_ms": 3234,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ  \nПРОСРОЧКА: НЕТ  \nБОЛЬ: НЕ ВЫЯЛ  \nВОПРОС_О_БОЛИ: НЕТ  \nПРИСОЕДИНЕНИЕ: 0  \nВОЗРАЖЕНИЯ: НЕ БЫЛ  \nКЦД: НЕТ",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:53:01.926353Z"
+}

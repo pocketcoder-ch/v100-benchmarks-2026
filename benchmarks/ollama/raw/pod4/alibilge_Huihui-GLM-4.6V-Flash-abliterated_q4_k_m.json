@@ -1,0 +1,65 @@
+{
+  "model": "alibilge/Huihui-GLM-4.6V-Flash-abliterated:q4_k_m",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T13:50:01.054000Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2645,
+      "output_tokens": 300,
+      "ttft_ms": 2163,
+      "prefill_tps": 1223.0,
+      "decode_tps": 78.56,
+      "total_wall_ms": 7019,
+      "done_reason": "length",
+      "response_preview": "<think>Got it, let's tackle this step by step. First, I need to go through each field in the requested format.\n\n1. ДОЛГ: The user is asking if there's a debt amount. Looking at the provided text (dialogue and transcript), there's no mention of any debt or financial obligation beyond budget not speci",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4572,
+      "output_tokens": 300,
+      "ttft_ms": 3538,
+      "prefill_tps": 1292.4,
+      "decode_tps": 76.92,
+      "total_wall_ms": 8558,
+      "done_reason": "length",
+      "response_preview": "<think>Got it, let's analyze the request step by step.\n\nFirst, I need to go through each field in the user's request and find the corresponding information from the provided text.\n\n1. **ДОЛГ**: The text doesn't mention any debt amount. So \"НЕТ\".\n\n2. **ПРОСРОЧКА**: There's no mention of a deadline be",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8572,
+      "output_tokens": 300,
+      "ttft_ms": 6968,
+      "prefill_tps": 1230.1,
+      "decode_tps": 74.21,
+      "total_wall_ms": 12131,
+      "done_reason": "length",
+      "response_preview": "<think>Got it, let's tackle this step by step. The user wants a specific analysis of the call transcript in the given format.\n\nFirst, I need to go through each field:\n\n1. ДОЛГ: Is there any debt mentioned? Looking at the transcript, the client talks about spending 500 already and potential costs (li",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 11721,
+      "output_tokens": 300,
+      "ttft_ms": 9879,
+      "prefill_tps": 1186.5,
+      "decode_tps": 71.57,
+      "total_wall_ms": 15263,
+      "done_reason": "length",
+      "response_preview": "<think>Got it, let's tackle this step by step. The user wants a specific analysis of the call transcript in the given format.\n\nFirst, check each field:\n\n1. ДОЛГ: The transcript doesn't mention any debt amount. So \"НЕТ\".\n2. ПРОСРОЧКА: No mention of overdue time or deadline. \"НЕТ\".\n3. Боль: Main pain ",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T13:50:44.031659Z"
+}

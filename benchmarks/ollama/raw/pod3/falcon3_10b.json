@@ -1,0 +1,65 @@
+{
+  "model": "falcon3:10b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:13:26.926186Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 7267,
+      "output_tokens": 141,
+      "ttft_ms": 4157,
+      "prefill_tps": 1748.3,
+      "decode_tps": 76.6,
+      "total_wall_ms": 6453,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: наплавляемые рулонные материалы, ПВХ-мембрана\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 12401,
+      "output_tokens": 174,
+      "ttft_ms": 7995,
+      "prefill_tps": 1551.1,
+      "decode_tps": 70.45,
+      "total_wall_ms": 11021,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: общение об объемах работ, материалах, времени, вопросы об объеме работ и материалах\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 22000,
+      "output_tokens": 110,
+      "ttft_ms": 17201,
+      "prefill_tps": 1279.0,
+      "decode_tps": 61.13,
+      "total_wall_ms": 19461,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 0\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 22000,
+      "output_tokens": 179,
+      "ttft_ms": 17207,
+      "prefill_tps": 1278.6,
+      "decode_tps": 61.02,
+      "total_wall_ms": 20804,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: возможность отправить фотографии и информацию в WhatsApp, предложение откладывать решение по бюджету\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:14:24.675009Z"
+}

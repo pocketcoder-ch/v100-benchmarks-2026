@@ -1,0 +1,65 @@
+{
+  "model": "command-r:35b-08-2024-q4_K_M",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T09:57:01.887668Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2648,
+      "output_tokens": 81,
+      "ttft_ms": 3751,
+      "prefill_tps": 706.0,
+      "decode_tps": 32.54,
+      "total_wall_ms": 6990,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Повторные повреждения кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 1\nВОЗРАЖЕНИЯ: Жидкая резина, бюджет\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4610,
+      "output_tokens": 82,
+      "ttft_ms": 6200,
+      "prefill_tps": 743.6,
+      "decode_tps": 31.21,
+      "total_wall_ms": 9523,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Эстетика и функциональность\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: Функциональность, эстетика, цена\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8658,
+      "output_tokens": 83,
+      "ttft_ms": 12367,
+      "prefill_tps": 700.1,
+      "decode_tps": 29.3,
+      "total_wall_ms": 15981,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: сомнения в качестве ремонта кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: цена, качество, подход к ремонту\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 11864,
+      "output_tokens": 86,
+      "ttft_ms": 17937,
+      "prefill_tps": 661.4,
+      "decode_tps": 27.9,
+      "total_wall_ms": 21834,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: протечки на мансардной крыше\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: стоимость работ, гарантия, оплата\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T09:57:56.228782Z"
+}

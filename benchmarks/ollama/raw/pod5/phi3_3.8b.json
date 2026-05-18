@@ -1,0 +1,65 @@
+{
+  "model": "phi3:3.8b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:29:36.167076Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3522,
+      "output_tokens": 226,
+      "ttft_ms": 848,
+      "prefill_tps": 4152.9,
+      "decode_tps": 94.98,
+      "total_wall_ms": 3514,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕТ\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 1\nВОЗРАЖЕНИЯ: \n\n---\n\nКонтекст: В диалоге обсуждаются проблемы с кровлей здания, ремонт и гидроизоляции. Клиент просит консультацию для решения техник покрытия и возможно применение новых технологий, таких как жидкая резина или напыл",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6092,
+      "output_tokens": 89,
+      "ttft_ms": 1547,
+      "prefill_tps": 3938.1,
+      "decode_tps": 73.58,
+      "total_wall_ms": 2905,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: [неизвестно]\nПРОСРОЧКА: [неизвестно]\nБОЛЬ: [нет | нет]\nВОПРОС_О_БОЛИ: [нет | нет]\nВОЗРАЖЕНИЯ: [нет | нет]\nКЦД: [да | да]",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 11656,
+      "output_tokens": 67,
+      "ttft_ms": 3492,
+      "prefill_tps": 3338.4,
+      "decode_tps": 47.77,
+      "total_wall_ms": 5061,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 500\nПРОСРОЧКА: НЕТ\nБОЛЬ: 2\nВОЗРАЖЕНИЯ: 1\n\nОБЩИЙ_БОЛИ: \n\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 16114,
+      "output_tokens": 70,
+      "ttft_ms": 5408,
+      "prefill_tps": 2979.5,
+      "decode_tps": 37.2,
+      "total_wall_ms": 7553,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: 6 тысяч\nПРОСРОЧКА: 2\nБОЛЬ: Олег\nВОПРОС_О_БОЛИ: 3\nВОЗРАЖЕНИЯ: Нет\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:29:55.209949Z"
+}

@@ -1,0 +1,65 @@
+{
+  "model": "glm4:9b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T11:10:02.162375Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 2615,
+      "output_tokens": 82,
+      "ttft_ms": 1021,
+      "prefill_tps": 2561.1,
+      "decode_tps": 108.54,
+      "total_wall_ms": 2183,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Повреждение рулонной гидроизоляции и вздутие стяжки\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 4546,
+      "output_tokens": 99,
+      "ttft_ms": 1818,
+      "prefill_tps": 2500.4,
+      "decode_tps": 107.78,
+      "total_wall_ms": 3196,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Уточнение проекта отделки фасада/дымоходов\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: функциональность, риск попадания воды, нагрев металла, эстетика сочетания, неполный расчёт\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 8571,
+      "output_tokens": 77,
+      "ttft_ms": 3713,
+      "prefill_tps": 2308.4,
+      "decode_tps": 102.99,
+      "total_wall_ms": 4895,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Сомнения в качестве и стоимости ремонта кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: стоимость, качество, диагностика\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 11755,
+      "output_tokens": 72,
+      "ttft_ms": 5399,
+      "prefill_tps": 2177.3,
+      "decode_tps": 100.37,
+      "total_wall_ms": 6619,
+      "done_reason": "stop",
+      "response_preview": "ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Протечки мансардной крыши\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕТ\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T11:10:19.067601Z"
+}

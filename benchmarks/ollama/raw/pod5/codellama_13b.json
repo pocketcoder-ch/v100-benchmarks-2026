@@ -1,0 +1,65 @@
+{
+  "model": "codellama:13b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:02:39.286663Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3533,
+      "output_tokens": 100,
+      "ttft_ms": 2219,
+      "prefill_tps": 1591.9,
+      "decode_tps": 66.89,
+      "total_wall_ms": 3885,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 0\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6103,
+      "output_tokens": 179,
+      "ttft_ms": 4014,
+      "prefill_tps": 1520.5,
+      "decode_tps": 60.0,
+      "total_wall_ms": 7185,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: 424 секунд (7 минут)\nПРОСРОЧКА: НЕТ\nБОЛЬ: СМЕНА КАМНЯ В МЕТАЛЛ\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2 (хорошее)\nВОЗРАЖЕНИЯ: Функциональность выступов/свесов, риск попадания воды в маркизы, нагрев металла возле камина и эстетика сочетания металла с камнем\nКЦД: ДА (пересчитать смету и выслать к суб",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 11667,
+      "output_tokens": 102,
+      "ttft_ms": 8535,
+      "prefill_tps": 1367.0,
+      "decode_tps": 49.64,
+      "total_wall_ms": 10783,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: 3000 руб/м²\nПРОСРОЧКА: НЕТ\nБОЛЬ: НЕ ВЫЯВЛЕНА\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: нет\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 16125,
+      "output_tokens": 105,
+      "ttft_ms": 12787,
+      "prefill_tps": 1261.1,
+      "decode_tps": 42.8,
+      "total_wall_ms": 15461,
+      "done_reason": "stop",
+      "response_preview": "\nДОЛГ: 3000 рублей\nПРОСРОЧКА: 2 недели\nБОЛЬ: Протечки в мансарде\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 1 (хорошее)\nВОЗРАЖЕНИЯ: нет\nКЦД: ДА",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:03:16.612473Z"
+}

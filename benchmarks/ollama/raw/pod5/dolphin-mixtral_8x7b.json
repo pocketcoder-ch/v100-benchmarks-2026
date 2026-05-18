@@ -1,0 +1,65 @@
+{
+  "model": "dolphin-mixtral:8x7b",
+  "num_ctx": 22000,
+  "max_tokens_out": 300,
+  "temperature": 0.0,
+  "eval_prompt_file": "/root/eval_prompt.txt",
+  "eval_prompt_preview": "КОНТЕКСТ: Транскрипция звонка колл-центра. Менеджер звонит клиенту. Цель — выявить боль клиента, диагностировать долг и просрочку, договориться о следующем шаге.\n\nПроанализируй диалог выше. Ответь СТР",
+  "started_at": "2026-05-15T12:36:43.063619Z",
+  "ollama_options_used": {
+    "num_predict": 300,
+    "temperature": 0.0,
+    "num_ctx": 22000
+  },
+  "results": [
+    {
+      "level": "short",
+      "prompt_tokens": 3826,
+      "output_tokens": 98,
+      "ttft_ms": 5388,
+      "prefill_tps": 710.0,
+      "decode_tps": 72.41,
+      "total_wall_ms": 6930,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Ремонт плоской кровли\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО\nКЦД: НЕТ",
+      "status": "OK"
+    },
+    {
+      "level": "small",
+      "prompt_tokens": 6629,
+      "output_tokens": 93,
+      "ttft_ms": 9395,
+      "prefill_tps": 705.6,
+      "decode_tps": 66.83,
+      "total_wall_ms": 10968,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: не узнано\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: не было выявлено\nКЦД: ДА",
+      "status": "OK"
+    },
+    {
+      "level": "medium",
+      "prompt_tokens": 12878,
+      "output_tokens": 105,
+      "ttft_ms": 19237,
+      "prefill_tps": 669.4,
+      "decode_tps": 56.58,
+      "total_wall_ms": 21297,
+      "done_reason": "stop",
+      "response_preview": " DOLG: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: Поиск подрядчика для ремонта кровли и выбора наилучшей технологии\nВОПРОС_О_БОЛИ: ДА\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО",
+      "status": "OK"
+    },
+    {
+      "level": "large",
+      "prompt_tokens": 17895,
+      "output_tokens": 94,
+      "ttft_ms": 27686,
+      "prefill_tps": 646.3,
+      "decode_tps": 50.44,
+      "total_wall_ms": 29796,
+      "done_reason": "stop",
+      "response_preview": " ДОЛГ: НЕТ\nПРОСРОЧКА: НЕТ\nБОЛЬ: протечки на крыше коттеджа\nВОПРОС_О_БОЛИ: НЕТ\nПРИСОЕДИНЕНИЕ: 2\nВОЗРАЖЕНИЯ: НЕ БЫЛО",
+      "status": "OK"
+    }
+  ],
+  "finished_at": "2026-05-15T12:37:52.066522Z"
+}
