@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V100 Benchmarks 2026 — 2× Tesla V100 32GB · 128 моделей</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 50px 24px 80px; }
+  h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f1f5f9;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  h1 .nv { color: #76b900; }
+  .sub {
+    font-size: 16px;
+    color: #94a3b8;
+    margin-bottom: 32px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .stat {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .stat .v {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .stat .v.green  { color: #76b900; }
+  .stat .v.blue   { color: #60a5fa; }
+  .stat .v.amber  { color: #f59e0b; }
+  .stat .v.purple { color: #a78bfa; }
+  .stat .l {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 28px 0 14px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #21262d;
+  }
+  .card {
+    display: block;
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: #76b900;
+    transform: translateY(-1px);
+  }
+  .card .t {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 4px;
+  }
+  .card .t .arrow { color: #76b900; margin-left: 6px; }
+  .card .d {
+    font-size: 14px;
+    color: #94a3b8;
+  }
+  .links {
+    margin-top: 28px;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  .links a { color: #60a5fa; text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  code {
+    background: #161b22;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    color: #c9d1d9;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>V100 Benchmarks 2026<br><span style="font-size:22px;color:#94a3b8;font-weight:500">2× <span class="nv">Tesla V100 32GB</span> SXM2 · 128 моделей в одной таблице</span></h1>
+  <div class="sub">Companion-репо к статье на Хабре. Всё, что мы реально запустили на V100 (cc 7.0, Volta): сырые JSON, скрипты, дашборды.</div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="v green">108</div>
+      <div class="l">LLM<br>Ollama Q4_K_M</div>
+    </div>
+    <div class="stat">
+      <div class="v blue">14</div>
+      <div class="l">Image-gen<br>sd.cpp</div>
+    </div>
+    <div class="stat">
+      <div class="v amber">6</div>
+      <div class="l">Video-gen<br>Wan / Cog</div>
+    </div>
+    <div class="stat">
+      <div class="v purple">1×</div>
+      <div class="l">STT<br>Whisper-large-v3</div>
+    </div>
+  </div>
+
+  <h2>Интерактивные дашборды</h2>
+
+  <a class="card" href="benchmarks/ollama/stats_interactive.html">
+    <div class="t">Stats Interactive<span class="arrow">→</span></div>
+    <div class="d">Главная сводная таблица по всем 108 LLM: avg tok/s по 4 уровням контекста (3K / 5K / 10K / 14K), TTFT, prefill, статусы. Фильтры по семейству, размеру, поду.</div>
+  </a>
+
+  <a class="card" href="benchmarks/ollama/dashboard.html">
+    <div class="t">Dashboard<span class="arrow">→</span></div>
+    <div class="d">Графики и распределения: tok/s vs B, деградация по контексту, разница NVLink vs PCIe, tooltips с cause-effect-комментариями.</div>
+  </a>
+
+  <a class="card" href="benchmarks/ollama/stats.html">
+    <div class="t">Stats (статическая версия)<span class="arrow">→</span></div>
+    <div class="d">Лёгкая HTML-таблица без JS — открывается мгновенно, удобно для копипаста.</div>
+  </a>
+
+  <h2>Документация</h2>
+
+  <a class="card" href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/FULL_REPORT.md">
+    <div class="t">FULL_REPORT.md<span class="arrow">→</span></div>
+    <div class="d">Полный отчёт по 108 моделям — таблица с avg / TTFT / prefill / статусами + интерпретация результатов по группам (топ-10, рабочие лошадки 7–9B, большие 14–70B, MoE, «где упираемся в потолок»).</div>
+  </a>
+
+  <a class="card" href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/MODEL_CARDS.md">
+    <div class="t">MODEL_CARDS.md<span class="arrow">→</span></div>
+    <div class="d">108 карточек, по одной на модель: конфиг, метрики, пример ответа на эталонном промпте.</div>
+  </a>
+
+  <a class="card" href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/V100_CHECKLIST.md">
+    <div class="t">V100_CHECKLIST.md<span class="arrow">→</span></div>
+    <div class="d">17 граблей под Volta cc 7.0 с решениями: SHM 96KB wall на <code>head_dim=128</code>, FlashAttention под V100, обязательные ENV-флаги, AWQ vs GPTQ vs FP8, что лезет / не лезет.</div>
+  </a>
+
+  <a class="card" href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/VARIANCE_FINDINGS.md">
+    <div class="t">VARIANCE_FINDINGS.md<span class="arrow">→</span></div>
+    <div class="d">Почему N=1 валиден на single-stream при <code>temperature=0</code>: CV ≤ 0.10% по перепрогону. Объясняем, почему не делали N=5.</div>
+  </a>
+
+  <a class="card" href="https://github.com/pocketcoder-ch/v100-benchmarks-2026/blob/main/docs/COSTS.md">
+    <div class="t">COSTS.md<span class="arrow">→</span></div>
+    <div class="d">Аренда V100 в 2026: vast.ai, Lambda, RunPod (V100 уже выведен) — цены, топология NVLink vs PCIe, что брать под наш бенч.</div>
+  </a>
+
+  <h2>Внешние ссылки</h2>
+  <div class="links">
+    — Репо: <a href="https://github.com/pocketcoder-ch/v100-benchmarks-2026">github.com/pocketcoder-ch/v100-benchmarks-2026</a><br>
+    — Команда: <a href="https://bvmax.ru/ai">bvmax.ru/ai</a> (BVM — AI для аналитики звонков и on-prem LLM-деплои)<br>
+    — Telegram: <a href="https://t.me/notes_from_cto">@notes_from_cto</a> (регулярные технические заметки про инфру, локальный ИИ и железо)
+  </div>
+
+</div>
+</body>
+</html>
