@@ -44,7 +44,7 @@ Top-10 LLMs by decode throughput on V100 (Ollama Q4_K_M, single-stream, avg acro
 
 **Interactive table (sort, filter by family/pod/size, search) — [pocketcoder-ch.github.io/v100-benchmarks-2026](https://pocketcoder-ch.github.io/v100-benchmarks-2026/).** Wider columns (TTFT, prefill, VRAM, runs spread) and per-model cards — [`docs/FULL_REPORT.md`](docs/FULL_REPORT.md) / [`docs/MODEL_CARDS.md`](docs/MODEL_CARDS.md).
 
-<details><summary><b>Full table — all 108 LLMs, sorted by avg decode tps (click to expand)</b></summary>
+<details open><summary><b>Full table — all 108 LLMs, sorted by avg decode tps</b></summary>
 
 Rows are sorted by `avg` decode tps (mean of 4 context levels). Six FAIL rows at the bottom — see [`docs/V100_CHECKLIST.md`](docs/V100_CHECKLIST.md) for the cause of each failure.
 

@@ -44,7 +44,7 @@
 
 **Интерактивная таблица (сортировка, фильтр по семье/поду/размеру, поиск) — [pocketcoder-ch.github.io/v100-benchmarks-2026](https://pocketcoder-ch.github.io/v100-benchmarks-2026/).** Расширенные колонки (TTFT, prefill, VRAM, runs spread) и карточки моделей — [`docs/FULL_REPORT.md`](docs/FULL_REPORT.md) / [`docs/MODEL_CARDS.md`](docs/MODEL_CARDS.md).
 
-<details><summary><b>Полная таблица — все 108 LLM, сорт по avg decode tps (кликни чтобы раскрыть)</b></summary>
+<details open><summary><b>Полная таблица — все 108 LLM, сорт по avg decode tps</b></summary>
 
 Строки отсортированы по `avg` decode tps (среднее по 4 уровням контекста). Шесть FAIL-строк внизу — причины каждого падения см. в [`docs/V100_CHECKLIST.md`](docs/V100_CHECKLIST.md).
 
